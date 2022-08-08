@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/homeFragment"
+        android:icon="@drawable/ic_bottom_home"
+        app:showAsAction="ifRoom"
+        android:enabled="true"
+        android:title="HOME" />
+
+    <item
+        android:id="@+id/communityFragment"
+        android:icon="@drawable/ic_bottom_community"
+        app:showAsAction="ifRoom"
+        android:enabled="true"
+        android:title="커뮤니티" />
+
+    <item
+        android:id="@+id/mapFragment"
+        android:icon="@drawable/ic_bottom_map"
+        app:showAsAction="ifRoom"
+        android:enabled="true"
+        android:title="꽃집지도" />
+
+    <item
+        android:id="@+id/cartFragment"
+        android:icon="@drawable/ic_bottom_cart"
+        app:showAsAction="ifRoom"
+        android:enabled="true"
+        android:title="장바구니" />
+
+    <item
+        android:id="@+id/mypageFragment"
+        android:icon="@drawable/ic_bottom_mypage"
+        app:showAsAction="ifRoom"
+        android:enabled="true"
+        android:title="마이페이지" />
+
+</menu>
