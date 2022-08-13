@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<font-family xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <!-- Light -->
+    <font
+        android:font="@font/notosanscjkkr_light"
+        android:fontStyle="normal"
+        android:letterSpacing="-15"
+        app:font="@font/notosanscjkkr_light"
+        app:fontStyle="normal"/>
+
+    <!-- Regular -->
+    <font
+        android:font="@font/notosanscjkkr_regular"
+        android:fontStyle="normal"
+        android:letterSpacing="-15"
+        app:font="@font/notosanscjkkr_regular"
+        app:fontStyle="normal"/>
+
+    <!-- Medium -->
+    <font
+        android:font="@font/notosanscjkkr_medium"
+        android:fontStyle="normal"
+        android:letterSpacing="-15"
+        app:font="@font/notosanscjkkr_medium"
+        app:fontStyle="normal"/>
+
+    <!-- Bold -->
+    <font
+        android:font="@font/notosanscjkkr_bold"
+        android:fontStyle="normal"
+        android:letterSpacing="-15"
+        app:font="@font/notosanscjkkr_bold"
+        app:fontStyle="normal"/>
+
+</font-family>
