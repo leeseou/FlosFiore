@@ -1,17 +1,432 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    android:overScrollMode="never"
+    android:scrollbars="none"
+    android:fillViewport="true"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
 
-    <TextView
-        android:layout_width="wrap_content"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="홈 프래그먼트"
-        android:textSize="40sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginTop="24dp">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <LinearLayout
+            android:id="@+id/home_location_llayout"
+            android:layout_width="0dp"
+            android:layout_height="64dp"
+            android:gravity="center"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
+
+            <ImageView
+                android:layout_width="21dp"
+                android:layout_height="27dp"
+                android:src="@drawable/ic_home_location"/>
+
+            <TextView
+                android:id="@+id/home_location_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:text="서울시 노원구"
+                android:textColor="@color/main_green2"
+                android:fontFamily="@font/notosanscjkkr_bold"
+                android:textSize="16sp"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/home_search_llayout"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:gravity="center_vertical"
+            android:paddingStart="20dp"
+            android:background="@drawable/home_search_border"
+            app:layout_constraintTop_toBottomOf="@id/home_location_llayout"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
+            <ImageView
+                android:layout_width="16dp"
+                android:layout_height="16dp"
+                android:src="@drawable/ic_home_search"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:textColor="#66015C43"
+                android:text="찾고 있는 꽃이나 식물이 있으신가요?"
+                android:fontFamily="@font/notosanscjkkr_medium"/>
+        </LinearLayout>
+
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/home_category_tb"
+            android:layout_width="match_parent"
+            android:layout_height="26dp"
+            android:layout_marginTop="10dp"
+            app:tabTextColor="#A1A1A1"
+            app:tabSelectedTextColor="@color/white"
+            app:tabBackground="@drawable/home_tab_selector"
+            app:tabIndicatorHeight="0dp"
+            app:tabRippleColor="@android:color/transparent"
+            app:tabMode="scrollable"
+            app:layout_constraintTop_toBottomOf="@id/home_search_llayout"
+            app:layout_constraintStart_toStartOf="parent"/>
+
+        <androidx.viewpager2.widget.ViewPager2
+            android:id="@+id/home_category_vp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:backgroundTint="#00FFFFFF"
+            app:layout_constraintTop_toBottomOf="@id/home_category_tb"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/home_view_all_btn"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:background="@drawable/home_btn_border"
+            android:fontFamily="@font/notosanscjkkr_medium"
+            android:text="전체보기"
+            android:textColor="@color/main_green1"
+            android:textSize="14sp"
+            app:layout_constraintTop_toBottomOf="@id/home_category_vp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+        <ImageView
+            android:id="@+id/home_test_iv"
+            android:layout_width="match_parent"
+            android:layout_height="132.5dp"
+            android:layout_marginTop="40dp"
+            android:src="@drawable/img_home_test"
+            app:layout_constraintTop_toBottomOf="@id/home_view_all_btn"
+            app:layout_constraintStart_toStartOf="parent"/>
+
+        <TextView
+            android:id="@+id/home_best10_tv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="46dp"
+            android:text="인기 상품 TOP 10"
+            android:fontFamily="@font/notosanscjkkr_bold"
+            android:textSize="20sp"
+            android:textColor="@color/black"
+            app:layout_constraintTop_toBottomOf="@id/home_test_iv"
+            app:layout_constraintStart_toStartOf="parent"/>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/home_best10_rv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            android:orientation="horizontal"
+            tools:listitem="@layout/item_home_best10"
+            app:layout_constraintTop_toBottomOf="@id/home_best10_tv"
+            app:layout_constraintStart_toStartOf="parent"/>
+
+        <LinearLayout
+            android:id="@+id/home_best10_more_llayout"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/home_more_border"
+            android:gravity="center"
+            app:layout_constraintTop_toBottomOf="@id/home_best10_rv"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="인기 상품 더보기"
+                android:textColor="@color/main_green1"
+                android:textSize="14sp"
+                android:fontFamily="@font/notosanscjkkr_medium"/>
+            <ImageView
+                android:layout_width="16dp"
+                android:layout_height="8dp"
+                android:src="@drawable/ic_home_more"/>
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/home_sale_tv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:text="금일 할인 제품 둘러보세요"
+            android:fontFamily="@font/notosanscjkkr_bold"
+            android:textSize="20sp"
+            android:textColor="@color/black"
+            app:layout_constraintTop_toBottomOf="@id/home_best10_more_llayout"
+            app:layout_constraintStart_toStartOf="parent"/>
+
+
+        <LinearLayout
+            android:id="@+id/home_sale_time_llayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="-20dp"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            app:layout_constraintTop_toBottomOf="@id/home_sale_tv"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <ImageView
+                android:layout_width="18.5dp"
+                android:layout_height="18.5dp"
+                android:src="@drawable/ic_home_more"/>
+            <TextView
+                android:id="@+id/home_sale_time_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="07:01:24"
+                android:textSize="20sp"
+                android:textColor="@color/main_red"
+                android:fontFamily="@font/notosanscjkkr_bold"/>
+        </LinearLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/home_sale_rv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            android:orientation="horizontal"
+            tools:listitem="@layout/item_home_sale"
+            app:layout_constraintTop_toBottomOf="@id/home_sale_time_llayout"
+            app:layout_constraintStart_toStartOf="parent"/>
+
+
+        <LinearLayout
+            android:id="@+id/home_sale_more_llayout"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/home_more_border"
+            android:gravity="center"
+            app:layout_constraintTop_toBottomOf="@id/home_sale_rv"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="할인 상품 더보기"
+                android:textColor="@color/main_green1"
+                android:textSize="14sp"
+                android:fontFamily="@font/notosanscjkkr_medium"/>
+            <ImageView
+                android:layout_width="16dp"
+                android:layout_height="8dp"
+                android:src="@drawable/ic_home_more"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/home_popular_llayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:orientation="horizontal"
+            app:layout_constraintTop_toBottomOf="@id/home_sale_more_llayout"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <TextView
+                android:id="@+id/home_mybest_user_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="조이"
+                android:fontFamily="@font/notosanscjkkr_bold"
+                android:textSize="20sp"
+                android:textColor="@color/black"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text=" 님 주변 인기 꽃집"
+                android:fontFamily="@font/notosanscjkkr_bold"
+                android:textSize="20sp"
+                android:textColor="@color/black"/>
+
+        </LinearLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/home_popular_rv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            android:orientation="horizontal"
+            tools:listitem="@layout/item_home_popular"
+            app:layout_constraintTop_toBottomOf="@id/home_popular_llayout"
+            app:layout_constraintStart_toStartOf="parent"/>
+
+        <LinearLayout
+            android:id="@+id/home_popular_more_llayout"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/home_more_border"
+            android:gravity="center"
+            app:layout_constraintTop_toBottomOf="@id/home_popular_rv"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="주변 꽃집 더보기"
+                android:textColor="@color/main_green1"
+                android:textSize="14sp"
+                android:fontFamily="@font/notosanscjkkr_medium"/>
+            <ImageView
+                android:layout_width="16dp"
+                android:layout_height="8dp"
+                android:src="@drawable/ic_home_more"/>
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/home_flower_tv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:text="실물이 더 예쁜 #생화 #야생화"
+            android:fontFamily="@font/notosanscjkkr_bold"
+            android:textSize="20sp"
+            android:textColor="@color/black"
+            app:layout_constraintTop_toBottomOf="@id/home_popular_more_llayout"
+            app:layout_constraintStart_toStartOf="parent"/>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/home_flower_rv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            android:orientation="horizontal"
+            tools:listitem="@layout/item_home_flower"
+            app:layout_constraintTop_toBottomOf="@id/home_flower_tv"
+            app:layout_constraintStart_toStartOf="parent"/>
+
+        <LinearLayout
+            android:id="@+id/home_flower_refresh_llayout"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/home_more_border"
+            android:gravity="center"
+            app:layout_constraintTop_toBottomOf="@id/home_flower_rv"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
+
+            <ImageView
+                android:layout_width="16dp"
+                android:layout_height="8dp"
+                android:src="@drawable/ic_home_more"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="상품 새로 보기 1/5"
+                android:textColor="@color/main_green1"
+                android:textSize="14sp"
+                android:fontFamily="@font/notosanscjkkr_medium"/>
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/home_unique_tv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:text="요즘엔 이게 대세! 이색식물 키우기"
+            android:fontFamily="@font/notosanscjkkr_bold"
+            android:textSize="20sp"
+            android:textColor="@color/black"
+            app:layout_constraintTop_toBottomOf="@id/home_flower_refresh_llayout"
+            app:layout_constraintStart_toStartOf="parent"/>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/home_unique_rv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            android:orientation="horizontal"
+            tools:listitem="@layout/item_home_best10"
+            app:layout_constraintTop_toBottomOf="@id/home_unique_tv"
+            app:layout_constraintStart_toStartOf="parent"/>
+
+        <LinearLayout
+            android:id="@+id/home_unique_more_llayout"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/home_more_border"
+            android:gravity="center"
+            app:layout_constraintTop_toBottomOf="@id/home_unique_rv"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="이색 식물 더보기"
+                android:textColor="@color/main_green1"
+                android:textSize="14sp"
+                android:fontFamily="@font/notosanscjkkr_medium"/>
+            <ImageView
+                android:layout_width="16dp"
+                android:layout_height="8dp"
+                android:src="@drawable/ic_home_more"/>
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/home_insta_tv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:text="Flos Fiore 인스타그램"
+            android:fontFamily="@font/notosanscjkkr_bold"
+            android:textSize="20sp"
+            android:textColor="@color/black"
+            app:layout_constraintTop_toBottomOf="@id/home_unique_more_llayout"
+            app:layout_constraintStart_toStartOf="parent"/>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/home_insta_rv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            android:orientation="horizontal"
+            tools:listitem="@layout/item_home_insta"
+            app:layout_constraintTop_toBottomOf="@id/home_insta_tv"
+            app:layout_constraintStart_toStartOf="parent"/>
+
+        <LinearLayout
+            android:id="@+id/home_insta_more_llayout"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/home_more_border"
+            android:gravity="center"
+            app:layout_constraintTop_toBottomOf="@id/home_insta_rv"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="인스타그램 보러가기"
+                android:textColor="@color/main_green1"
+                android:textSize="14sp"
+                android:fontFamily="@font/notosanscjkkr_medium"/>
+            <ImageView
+                android:layout_width="16dp"
+                android:layout_height="8dp"
+                android:src="@drawable/ic_home_more"/>
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>
