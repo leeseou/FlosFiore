@@ -50,11 +50,13 @@ class StartActivity : AppCompatActivity() {
         if(isStart) {   // 시작화면으로
             binding.startIv.setImageResource(R.drawable.image_splash)
             binding.startIv.scaleType = ImageView.ScaleType.FIT_XY
+            binding.startGreyIv.visibility = View.INVISIBLE
             binding.startBtn.visibility = View.VISIBLE
             binding.startLoginFlayout.visibility = View.INVISIBLE
         } else {        // 로그인 화면으로
             binding.startIv.setImageResource(R.drawable.img_start)
             binding.startIv.scaleType = ImageView.ScaleType.FIT_START
+            binding.startGreyIv.visibility = View.VISIBLE
             binding.startBtn.visibility = View.INVISIBLE
             binding.startLoginFlayout.visibility = View.VISIBLE
         }

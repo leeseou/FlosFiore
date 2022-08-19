@@ -14,6 +14,17 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"/>
 
+    <ImageView
+        android:id="@+id/start_grey_iv"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#A4A4A4"
+        android:alpha="0.5"
+        android:visibility="invisible"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/start_btn"
         android:layout_width="188dp"
@@ -32,7 +43,7 @@
     <FrameLayout
         android:id="@+id/start_login_flayout"
         android:layout_width="match_parent"
-        android:layout_height="604dp"
+        android:layout_height="602dp"
         android:background="@drawable/frame_round_top"
         android:visibility="invisible"
         app:layout_constraintBottom_toBottomOf="parent"
