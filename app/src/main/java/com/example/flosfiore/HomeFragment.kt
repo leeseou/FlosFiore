@@ -4,8 +4,6 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.GridLayout
-import android.widget.HorizontalScrollView
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.GridLayoutManager
 import com.example.flosfiore.data.entities.Flower
@@ -27,7 +25,7 @@ class HomeFragment : Fragment() {
         binding = FragmentHomeBinding.inflate(inflater, container, false)
 
         //카테고리 탭레이아웃, 뷰페이저 연결
-        val categoryadapter = CategoryVPAdapter(this)
+        val categoryadapter = HomeCategoryVPAdapter(this)
         binding.homeCategoryVp.adapter = categoryadapter
         TabLayoutMediator(binding.homeCategoryTb, binding.homeCategoryVp) {
                 tab, position ->

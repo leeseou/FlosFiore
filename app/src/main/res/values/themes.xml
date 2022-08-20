@@ -21,4 +21,16 @@
         <item name="android:windowBackground"> @drawable/splash</item>
         <item name="android:statusBarColor"></item>
     </style>
+
+    <!-- TabLayout Text Design -->
+    <style name="home_tb_text" parent="TextAppearance.Design.Tab">
+        <item name="android:textSize">13sp</item>
+        <item name="fontFamily">@font/notosanscjkkr_light</item>
+    </style>
+
+    <style name="community_tb_text" parent="TextAppearance.Design.Tab">
+        <item name="android:textSize">12sp</item>
+        <item name="fontFamily">@font/notosanscjkkr_light</item>
+    </style>
+
 </resources>

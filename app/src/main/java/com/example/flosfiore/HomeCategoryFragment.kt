@@ -5,19 +5,17 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import com.example.flosfiore.databinding.FragmentCommunityBinding
+import com.example.flosfiore.databinding.FragmentCategoryBinding
 
-// 커뮤니티 프레그먼트
-class CommunityFragment : Fragment() {
-
-    lateinit var binding: FragmentCommunityBinding
+class HomeCategoryFragment : Fragment() {
+    lateinit var binding : FragmentCategoryBinding
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        binding = FragmentCommunityBinding.inflate(inflater, container, false)
+        binding = FragmentCategoryBinding.inflate(inflater, container, false)
 
         return binding.root
     }

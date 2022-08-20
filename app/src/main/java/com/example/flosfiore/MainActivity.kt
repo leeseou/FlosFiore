@@ -2,9 +2,9 @@ package com.example.flosfiore
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.View
 import android.widget.Toast
 import com.example.flosfiore.databinding.ActivityMainBinding
+import com.example.flosfiore.ui.main.community.CommunityFragment
 
 class MainActivity : AppCompatActivity() {
 
