@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.example.flosfiore.MainActivity
 import com.example.flosfiore.databinding.FragmentLoginBinding
+import com.example.flosfiore.ui.signup.SignupActivity
 
 class LoginFragment : Fragment() {
     lateinit var binding : FragmentLoginBinding
@@ -21,6 +22,10 @@ class LoginFragment : Fragment() {
 
         binding.loginLoginBtn.setOnClickListener {
             startActivity(Intent(requireContext(), MainActivity::class.java))
+        }
+
+        binding.loginSignupBtn.setOnClickListener {
+            startActivity(Intent(requireContext(), SignupActivity::class.java))
         }
 
         return binding.root

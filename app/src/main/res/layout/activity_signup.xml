@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/signup_toolbar_tb"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="JOIN"
+            android:textColor="@color/black"
+            android:textSize="24sp"
+            android:textStyle="bold"/>
+
+    </androidx.appcompat.widget.Toolbar>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <ImageView
+            android:layout_width="200dp"
+            android:layout_height="53.9dp"
+            android:src="@drawable/logo"/>
+
+        <ImageView
+            android:layout_width="200dp"
+            android:layout_height="53.9dp"
+            android:src="@drawable/flos_fiore"/>
+
+        <EditText
+            android:id="@+id/signup_id_et"
+            android:layout_width="200dp"
+            android:layout_height="44dp"
+            android:layout_marginTop="30dp"
+            android:paddingBottom="5dp"
+            android:hint="아이디"
+            android:textColorHint="#A4A4A4"
+            android:textSize="12sp"
+            android:fontFamily="@font/notosanscjkkr_medium"
+            android:backgroundTint="#A4A4A4"/>
+
+        <EditText
+            android:id="@+id/signup_pw_et"
+            android:layout_width="200dp"
+            android:layout_height="44dp"
+            android:paddingBottom="5dp"
+            android:hint="비밀번호"
+            android:textColorHint="#A4A4A4"
+            android:textSize="12sp"
+            android:fontFamily="@font/notosanscjkkr_medium"
+            android:backgroundTint="#A4A4A4"/>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/signup_signup_btn"
+            android:layout_width="200dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="20dp"
+            android:text="회원가입"
+            android:textColor="@color/white"
+            android:textSize="14sp"
+            android:fontFamily="@font/notosanscjkkr_medium"
+            android:background="@drawable/login_btn_border"/>
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
