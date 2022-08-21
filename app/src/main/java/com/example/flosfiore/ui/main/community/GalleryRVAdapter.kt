@@ -3,14 +3,14 @@ package com.example.flosfiore.ui.main.community
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.example.flosfiore.data.entities.Community
+import com.example.flosfiore.data.entities.Post
 import com.example.flosfiore.databinding.ItemCommunityGalleryBinding
 
-class GalleryRVAdapter (private val datalist : ArrayList<Community>) :
+class GalleryRVAdapter (private val datalist : ArrayList<Post>) :
         RecyclerView.Adapter<GalleryRVAdapter.ViewHolder>() {
 
         interface MyItemClickListener{
-            fun onItemClick(community: Community)
+            fun onItemClick(post: Post)
         }
 
         private lateinit var mItemClickListener : MyItemClickListener
@@ -18,8 +18,8 @@ class GalleryRVAdapter (private val datalist : ArrayList<Community>) :
             mItemClickListener = itemClickListener
         }
 
-        fun addItem(community: Community) {
-            datalist.add(community)
+        fun addItem(post: Post) {
+            datalist.add(post)
             notifyDataSetChanged()
         }
 
@@ -43,12 +43,12 @@ class GalleryRVAdapter (private val datalist : ArrayList<Community>) :
         override fun getItemCount(): Int = datalist.size
 
         inner class ViewHolder(val binding : ItemCommunityGalleryBinding) : RecyclerView.ViewHolder(binding.root) {
-            fun bind(community: Community) {
-                binding.itemCommunityGalleryMainIv.setImageResource(community.img!!)
-                binding.itemCommunityGalleryTitleTv.text = community.title
-                binding.itemCommunityGalleryWriterTv.text = community.writer
-                binding.itemCommunityGalleryLikeTv.text = community.like.toString()
-                binding.itemCommunityGalleryCommentTv.text = community.comment.toString()
+            fun bind(post: Post) {
+                binding.itemCommunityGalleryMainIv.setImageResource(post.img!!)
+                binding.itemCommunityGalleryTitleTv.text = post.title
+                binding.itemCommunityGalleryWriterTv.text = post.writer
+                binding.itemCommunityGalleryLikeTv.text = post.like.toString()
+                binding.itemCommunityGalleryCommentTv.text = post.comment.toString()
 
             }
         }

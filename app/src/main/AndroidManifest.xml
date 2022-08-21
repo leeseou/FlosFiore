@@ -21,6 +21,7 @@
         </activity>
         <activity android:name=".MainActivity"/>
         <activity android:name=".ui.signup.SignupActivity"/>
+        <activity android:name=".ui.main.community.CommunityDetailActivity"/>
     </application>
 
 </manifest>

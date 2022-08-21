@@ -4,14 +4,14 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.example.flosfiore.data.entities.Community
+import com.example.flosfiore.data.entities.Post
 import com.example.flosfiore.databinding.ItemCommunityPostBinding
 
-class PostRVAdapter (private val datalist : ArrayList<Community>) :
+class PostRVAdapter (private val datalist : ArrayList<Post>) :
         RecyclerView.Adapter<PostRVAdapter.ViewHolder>() {
 
         interface MyItemClickListener{
-            fun onItemClick(community: Community)
+            fun onItemClick(post: Post)
         }
 
         private lateinit var mItemClickListener : MyItemClickListener
@@ -19,8 +19,8 @@ class PostRVAdapter (private val datalist : ArrayList<Community>) :
             mItemClickListener = itemClickListener
         }
 
-        fun addItem(community: Community) {
-            datalist.add(community)
+        fun addItem(post: Post) {
+            datalist.add(post)
             notifyDataSetChanged()
         }
 
@@ -44,24 +44,24 @@ class PostRVAdapter (private val datalist : ArrayList<Community>) :
         override fun getItemCount(): Int = datalist.size
 
         inner class ViewHolder(val binding : ItemCommunityPostBinding) : RecyclerView.ViewHolder(binding.root) {
-            fun bind(community: Community) {
-                if(community.img == null) {
+            fun bind(post: Post) {
+                if(post.img == null) {
                     binding.itemCommunityPostMainIv.visibility = View.GONE
                 } else {
-                    binding.itemCommunityPostMainIv.setImageResource(community.img!!)
+                    binding.itemCommunityPostMainIv.setImageResource(post.img!!)
                 }
 
-                if(community.content == null) {
+                if(post.content == null) {
                     binding.itemCommunityPostContentTv.visibility = View.GONE
                 } else {
-                    binding.itemCommunityPostContentTv.text = community.content
+                    binding.itemCommunityPostContentTv.text = post.content
                 }
 
 
-                binding.itemCommunityPostTitleTv.text = community.title
-                binding.itemCommunityPostWriterTv.text = community.writer
-                binding.itemCommunityPostLikeTv.text = community.like.toString()
-                binding.itemCommunityPostCommentTv.text = community.comment.toString()
+                binding.itemCommunityPostTitleTv.text = post.title
+                binding.itemCommunityPostWriterTv.text = post.writer
+                binding.itemCommunityPostLikeTv.text = post.like.toString()
+                binding.itemCommunityPostCommentTv.text = post.comment.toString()
 
             }
         }
