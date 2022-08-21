@@ -22,7 +22,7 @@
         <activity android:name=".MainActivity"/>
         <activity android:name=".ui.signup.SignupActivity"/>
         <activity android:name=".ui.main.community.CommunityDetailActivity"/>
-        <activity android:name=".ui.main.community.CommunityWriteActivity"/>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     
+        <activity android:name=".ui.main.community.CommunityWriteActivity"/>
     </application>
 
 </manifest>

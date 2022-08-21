@@ -2,6 +2,7 @@ package com.example.flosfiore.ui.main.community
 
 import android.os.Bundle
 import android.view.MenuItem
+import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import com.example.flosfiore.data.entities.Post
 import com.example.flosfiore.databinding.ActivityCommunityDetailBinding
@@ -43,5 +44,10 @@ class CommunityDetailActivity: AppCompatActivity() {
         binding.communityDetailContentTv.text = post.content
         binding.communityDetailCommentTv.text = post.comment.toString()
         binding.communityDetailLikeTv.text = post.like.toString()
+        if(post.img == null) {
+            binding.communityDetailImgCv.visibility = View.GONE
+        } else {
+            binding.communityDetailImgIv.setImageResource(post.img!!)
+        }
     }
 }
