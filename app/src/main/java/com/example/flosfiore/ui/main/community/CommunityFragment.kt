@@ -1,6 +1,7 @@
 package com.example.flosfiore.ui.main.community
 
 import android.app.Activity
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -35,6 +36,10 @@ class CommunityFragment : Fragment() {
         (activity as MainActivity).setSupportActionBar(binding.communityToolbarTb)
         (activity as MainActivity).supportActionBar?.setDisplayShowTitleEnabled(false)
         (activity as MainActivity).supportActionBar?.setDisplayHomeAsUpEnabled(true)
+
+        binding.communityWriteCiv.setOnClickListener {
+            startActivity(Intent(requireContext(), CommunityWriteActivity::class.java))
+        }
 
         return binding.root
     }
