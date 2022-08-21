@@ -11,7 +11,7 @@ class CommunityCategoryVPAdapter(fragment : Fragment) : FragmentStateAdapter(fra
         return when (position) {
             0 -> CommunityGalleryFragment()
             1 -> HomeCategoryFragment()
-            2 -> HomeCategoryFragment()
+            2 -> CommunityPostFragment()
             3 -> HomeCategoryFragment()
             else -> HomeCategoryFragment()
         }
