@@ -1,0 +1,456 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:overScrollMode="never"
+        android:scrollbars="none"
+        android:fillViewport="true"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/flower_detail_buy_cv">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="24dp">
+
+            <androidx.viewpager2.widget.ViewPager2
+                android:id="@+id/flower_detail_main_vp"
+                android:layout_width="match_parent"
+                android:layout_height="360dp"
+                app:layout_constraintTop_toTopOf="parent"/>
+
+            <com.google.android.material.tabs.TabLayout
+                android:id="@+id/flower_detail_main_tb"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:tabBackground="@drawable/vp_indicator_selector"
+                app:tabPaddingEnd="4dp"
+                app:tabPaddingStart="4dp"
+                app:tabGravity="center"
+                app:tabIndicator="@null"
+                android:scrollIndicators="none"
+                app:layout_constraintBottom_toBottomOf="@id/flower_detail_main_vp"
+                app:layout_constraintStart_toStartOf="@id/flower_detail_main_vp"
+                app:layout_constraintEnd_toEndOf="@id/flower_detail_main_vp"/>
+
+            <ImageView
+                android:layout_width="10dp"
+                android:layout_height="20dp"
+                android:layout_marginStart="16dp"
+                android:src="@drawable/ic_back"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"/>
+
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginEnd="16dp"
+                android:src="@drawable/ic_bottom_cart"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/flower_detail_search_iv"/>
+
+            <ImageView
+                android:id="@+id/flower_detail_search_iv"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginEnd="16dp"
+                android:src="@drawable/ic_home_search"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"/>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:paddingHorizontal="16dp"
+                app:layout_constraintTop_toBottomOf="@id/flower_detail_main_vp">
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/flower_detail_profile_civ"
+                    android:layout_width="16dp"
+                    android:layout_height="16dp"
+                    android:src="@drawable/img_gallery1"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"/>
+
+                <TextView
+                    android:id="@+id/flower_detail_store_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp"
+                    android:text="플로레 화원"
+                    android:textSize="11sp"
+                    android:textColor="@color/black"
+                    android:fontFamily="@font/notosanscjkkr_regular"
+                    app:layout_constraintTop_toTopOf="@id/flower_detail_profile_civ"
+                    app:layout_constraintBottom_toBottomOf="@id/flower_detail_profile_civ"
+                    app:layout_constraintStart_toEndOf="@id/flower_detail_profile_civ"/>
+
+                <ImageView
+                    android:layout_width="3dp"
+                    android:layout_height="6dp"
+                    android:layout_marginStart="5dp"
+                    android:src="@drawable/ic_home_more"
+                    app:layout_constraintTop_toTopOf="@id/flower_detail_store_tv"
+                    app:layout_constraintBottom_toBottomOf="@id/flower_detail_store_tv"
+                    app:layout_constraintStart_toEndOf="@id/flower_detail_store_tv"/>
+
+                <TextView
+                    android:id="@+id/flower_detail_name_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:text="분홍장미계절꽃다발"
+                    android:textSize="14dp"
+                    android:textColor="@color/black"
+                    android:fontFamily="@font/notosanscjkkr_medium"
+                    app:layout_constraintTop_toBottomOf="@id/flower_detail_profile_civ"
+                    app:layout_constraintStart_toStartOf="parent"/>
+
+                <LinearLayout
+                    android:id="@+id/flower_detail_price_llayout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    app:layout_constraintTop_toBottomOf="@id/flower_detail_name_tv"
+                    app:layout_constraintStart_toStartOf="parent"
+                    android:orientation="horizontal">
+                    <TextView
+                        android:id="@+id/flower_detail_price_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="52,900"
+                        android:textColor="@color/main_green1"
+                        android:textSize="21sp"
+                        android:fontFamily="@font/notosanscjkkr_bold"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="원"
+                        android:textColor="@color/main_green1"
+                        android:textSize="16sp"
+                        android:fontFamily="@font/notosanscjkkr_regular"/>
+                </LinearLayout>
+
+                <ImageView
+                    android:layout_width="17.08dp"
+                    android:layout_height="20dp"
+                    android:src="@drawable/ic_share"
+                    app:layout_constraintTop_toTopOf="@id/flower_detail_price_llayout"
+                    app:layout_constraintBottom_toBottomOf="@id/flower_detail_price_llayout"
+                    app:layout_constraintEnd_toEndOf="parent"/>
+
+                <LinearLayout
+                    android:id="@+id/flower_detail_point_llayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="32dp"
+                    android:layout_marginTop="12dp"
+                    android:background="@drawable/flower_detail_box_border"
+                    android:gravity="center_vertical"
+                    app:layout_constraintTop_toBottomOf="@id/flower_detail_price_llayout"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="5dp"
+                        android:text="적립"
+                        android:textSize="10sp"
+                        android:textColor="#A1A1A1"
+                        android:fontFamily="@font/notosanscjkkr_medium"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="50dp"
+                        android:text="최대"
+                        android:textSize="10sp"
+                        android:textColor="#A1A1A1"
+                        android:fontFamily="@font/notosanscjkkr_light"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:text="3,703P"
+                        android:textSize="10sp"
+                        android:textColor="#414141"
+                        android:fontFamily="@font/notosanscjkkr_medium"/>
+
+                </LinearLayout>
+
+                <View
+                    android:id="@+id/flower_detail_divider_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:layout_marginVertical="12dp"
+                    android:background="#E4E4E4"
+                    app:layout_constraintTop_toBottomOf="@id/flower_detail_point_llayout"/>
+
+                <TextView
+                    android:id="@+id/flower_detail_more_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="상품 정보"
+                    android:textSize="11sp"
+                    android:textColor="@color/black"
+                    android:fontFamily="@font/notosanscjkkr_bold"
+                    app:layout_constraintTop_toBottomOf="@id/flower_detail_divider_view"
+                    app:layout_constraintStart_toStartOf="parent"/>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/flower_detail_more_clayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="120dp"
+                    android:layout_marginTop="8dp"
+                    android:background="#F2F7F5"
+                    app:layout_constraintTop_toBottomOf="@id/flower_detail_more_tv">
+
+                    <LinearLayout
+                        android:id="@+id/flower_detail_info_llayout"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintBottom_toTopOf="@id/flower_detail_more_btn"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="이 상품에는 "
+                            android:textSize="12sp"
+                            android:textColor="#414141"
+                            android:fontFamily="@font/notosanscjkkr_regular"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="장미"
+                            android:textSize="12sp"
+                            android:textColor="@color/main_green1"
+                            android:fontFamily="@font/notosanscjkkr_bold"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="가 사용되었습니다"
+                            android:textSize="12sp"
+                            android:textColor="#414141"
+                            android:fontFamily="@font/notosanscjkkr_regular"/>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/flower_detail_more_btn"
+                        android:layout_width="188dp"
+                        android:layout_height="40dp"
+                        android:background="@drawable/flower_detail_btn_border"
+                        android:orientation="horizontal"
+                        android:gravity="center"
+                        app:layout_constraintTop_toBottomOf="@id/flower_detail_info_llayout"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="장미"
+                            android:textSize="12sp"
+                            android:textColor="@color/main_green1"
+                            android:fontFamily="@font/notosanscjkkr_bold"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text=" 평균 싯가 알아보기"
+                            android:textSize="12sp"
+                            android:textColor="@color/main_green1"
+                            android:fontFamily="@font/notosanscjkkr_regular"/>
+
+                        <ImageView
+                            android:layout_width="4dp"
+                            android:layout_height="8dp"
+                            android:layout_marginStart="5dp"
+                            android:src="@drawable/ic_home_more"
+                            app:layout_constraintTop_toTopOf="@id/flower_detail_store_tv"
+                            app:layout_constraintBottom_toBottomOf="@id/flower_detail_store_tv"
+                            app:layout_constraintStart_toEndOf="@id/flower_detail_store_tv"/>
+
+                    </LinearLayout>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <LinearLayout
+                    android:id="@+id/flower_detail_pic_llayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp"
+                    android:layout_marginTop="12dp"
+                    android:orientation="horizontal"
+                    android:gravity="center"
+                    app:layout_constraintTop_toBottomOf="@id/flower_detail_more_clayout">
+
+                    <ImageView
+                        android:layout_width="160dp"
+                        android:layout_height="match_parent"
+                        android:src="@drawable/img_flower_detail1"/>
+
+                    <ImageView
+                        android:layout_width="160dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="8dp"
+                        android:src="@drawable/img_flower_detail2"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintTop_toBottomOf="@id/flower_detail_pic_llayout">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="분홍장미계절꽃다발"
+                        android:textSize="13sp"
+                        android:textColor="@color/black"
+                        android:fontFamily="@font/notosanscjkkr_bold"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="로맨틱한 분홍장미에 계절꽃을 더해 아름다운 꽃다발을 완성했어요."
+                        android:textSize="11sp"
+                        android:textColor="#707070"
+                        android:fontFamily="@font/notosanscjkkr_light"/>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="-15dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="분홍장미 꽃다발로 "
+                            android:textSize="11sp"
+                            android:textColor="#707070"
+                            android:fontFamily="@font/notosanscjkkr_light"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="소중한 사람에게 특별한 기억"
+                            android:textSize="11sp"
+                            android:textColor="@color/black"
+                            android:fontFamily="@font/notosanscjkkr_medium"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="을 전해보세요"
+                            android:textSize="11sp"
+                            android:textColor="#707070"
+                            android:fontFamily="@font/notosanscjkkr_light"/>
+
+                    </LinearLayout>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="생일/기념일/고맥/승진축하/이벤트/출산/감사/위로"
+                        android:textSize="11sp"
+                        android:textColor="@color/black"
+                        android:fontFamily="@font/notosanscjkkr_regular"/>
+
+                </LinearLayout>
+
+
+
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/flower_detail_buy_cv"
+        android:layout_width="match_parent"
+        android:layout_height="81dp"
+        app:cardElevation="5dp"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingHorizontal="16dp"
+            android:layout_gravity="center_vertical">
+
+            <ImageView
+                android:id="@+id/flower_detail_like_iv"
+                android:layout_width="16.69dp"
+                android:layout_height="18dp"
+                android:src="@drawable/ic_community_like"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="323"
+                android:textSize="10sp"
+                android:textColor="@color/main_green1"
+                android:fontFamily="@font/notosanscjkkr_medium"
+                app:layout_constraintTop_toBottomOf="@id/flower_detail_like_iv"
+                app:layout_constraintStart_toStartOf="@id/flower_detail_like_iv"
+                app:layout_constraintEnd_toEndOf="@id/flower_detail_like_iv"/>
+
+            <ImageView
+                android:id="@+id/flower_detail_share_iv"
+                android:layout_width="15.37dp"
+                android:layout_height="18dp"
+                android:src="@drawable/ic_share"
+                app:layout_constraintTop_toTopOf="@id/flower_detail_like_iv"
+                app:layout_constraintStart_toStartOf="@id/flower_detail_share_tv"
+                app:layout_constraintEnd_toEndOf="@id/flower_detail_share_tv"/>
+
+            <TextView
+                android:id="@+id/flower_detail_share_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="16dp"
+                android:text="공유하기"
+                android:textSize="10sp"
+                android:textColor="@color/main_green1"
+                android:fontFamily="@font/notosanscjkkr_medium"
+                app:layout_constraintTop_toBottomOf="@id/flower_detail_share_iv"
+                app:layout_constraintStart_toEndOf="@id/flower_detail_like_iv"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:layout_width="242dp"
+                android:layout_height="44dp"
+                android:background="@drawable/login_btn_border"
+
+                android:text="구매하기"
+                android:textSize="10sp"
+                android:textColor="@color/white"
+                android:fontFamily="@font/notosanscjkkr_medium"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
