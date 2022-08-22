@@ -392,7 +392,7 @@
         android:id="@+id/flower_detail_buy_cv"
         android:layout_width="match_parent"
         android:layout_height="81dp"
-        app:cardElevation="5dp"
+        android:elevation="5dp"
         app:layout_constraintBottom_toBottomOf="parent">
 
         <androidx.constraintlayout.widget.ConstraintLayout

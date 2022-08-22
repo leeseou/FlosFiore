@@ -4,6 +4,8 @@ import android.os.Bundle
 import android.view.MenuItem
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
+import com.example.flosfiore.R
+import com.example.flosfiore.data.entities.Comment
 import com.example.flosfiore.data.entities.Post
 import com.example.flosfiore.databinding.ActivityCommunityDetailBinding
 
@@ -16,7 +18,7 @@ class CommunityDetailActivity: AppCompatActivity() {
         setContentView(binding.root)
 
         setViews()
-
+        setRVAdapter()
     }
 
     // toolbar 뒤로가기 clickListener
@@ -55,5 +57,15 @@ class CommunityDetailActivity: AppCompatActivity() {
         } else {
             binding.communityDetailContentTv.text = post.content
         }
+    }
+
+    // 리사이클러뷰 어댑터 연결
+    private fun setRVAdapter() {
+        val commentList = arrayListOf(
+            Comment(R.drawable.img_gallery3, "수염틸란드시아는 고양이와 함께 키워도 좋습니다.", "조이", System.currentTimeMillis()
+                , null, arrayListOf(Comment(null, "감사합니다!", "모긴", System.currentTimeMillis(), "조이", null)))
+        )
+        val commentRVAdapter = CommentsRVAdapter(commentList)
+        binding.communityDetailCommentRv.adapter = commentRVAdapter
     }
 }
