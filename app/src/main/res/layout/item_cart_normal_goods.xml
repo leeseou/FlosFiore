@@ -1,6 +1,142 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-             android:layout_width="match_parent"
-             android:layout_height="match_parent">
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="20dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <ImageView
+        android:id="@+id/item_cart_normal_goods_select_iv"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:src="@drawable/ic_cart_select"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+    <ImageView
+        android:id="@+id/item_cart_normal_goods_img_iv"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:src="@drawable/img_home_sale2"
+        android:scaleType="centerCrop"
+        android:layout_marginStart="10dp"
+        app:layout_constraintStart_toEndOf="@id/item_cart_normal_goods_select_iv"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <TextView
+        android:id="@+id/item_cart_normal_goods_place_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="플로레 화원"
+        android:textSize="12sp"
+        android:layout_marginTop="-10dp"
+        android:textColor="@color/main_gray1"
+        android:fontFamily="@font/notosanscjkkr_regular"
+        android:layout_marginStart="20dp"
+        app:layout_constraintStart_toEndOf="@id/item_cart_normal_goods_img_iv"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/item_cart_normal_goods_name_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="가든 꽃바구니"
+        android:textSize="14sp"
+        android:layout_marginTop="-10dp"
+        android:textColor="@color/black"
+        android:fontFamily="@font/notosanscjkkr_bold"
+        app:layout_constraintStart_toStartOf="@id/item_cart_normal_goods_place_tv"
+        app:layout_constraintTop_toBottomOf="@id/item_cart_normal_goods_place_tv" />
+
+    <TextView
+        android:id="@+id/item_cart_normal_goods_color_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="핑크\u0026옐로우"
+        android:textSize="14sp"
+        android:layout_marginTop="-20dp"
+        android:textColor="@color/main_gray1"
+        android:fontFamily="@font/notosanscjkkr_regular"
+        app:layout_constraintStart_toStartOf="@id/item_cart_normal_goods_place_tv"
+        app:layout_constraintTop_toBottomOf="@id/item_cart_normal_goods_name_tv" />
+
+    <TextView
+        android:id="@+id/item_cart_normal_goods_down_bn"
+        android:layout_width="30dp"
+        android:layout_height="35dp"
+        android:background="@drawable/ic_cart_delete_button"
+
+        android:text="-"
+        android:textColor="@color/black"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        android:gravity="center"
+
+        android:layout_marginTop="5dp"
+        android:layout_marginStart="1dp"
+        app:layout_constraintStart_toStartOf="@id/item_cart_normal_goods_img_iv"
+        app:layout_constraintTop_toBottomOf="@id/item_cart_normal_goods_img_iv"/>
+
+
+    <TextView
+        android:id="@+id/item_cart_normal_goods_center_bn"
+        android:layout_width="40dp"
+        android:layout_height="35dp"
+        android:background="@drawable/ic_cart_num_button"
+        android:text="1"
+        android:textColor="@color/black"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:layout_marginTop="5dp"
+        android:layout_marginStart="-1dp"
+        app:layout_constraintStart_toEndOf="@id/item_cart_normal_goods_down_bn"
+        app:layout_constraintTop_toBottomOf="@id/item_cart_normal_goods_img_iv"/>
+
+
+    <TextView
+        android:id="@+id/item_cart_normal_goods_up_bn"
+        android:layout_width="30dp"
+        android:layout_height="35dp"
+        android:background="@drawable/ic_cart_add_button"
+        android:text="+"
+        android:textColor="@color/black"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:layout_marginTop="5dp"
+        android:layout_marginStart="-1dp"
+        app:layout_constraintStart_toEndOf="@id/item_cart_normal_goods_center_bn"
+        app:layout_constraintTop_toBottomOf="@id/item_cart_normal_goods_img_iv"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="배송비 무료"
+        android:textSize="12sp"
+        android:textColor="@color/main_gray1"
+        android:fontFamily="@font/notosanscjkkr_regular"
+        android:layout_marginBottom="-15dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/item_cart_normal_goods_price_tv"/>
+
+    <TextView
+        android:id="@+id/item_cart_normal_goods_price_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="83,000원"
+        android:textSize="14sp"
+        android:textColor="@color/black"
+        android:fontFamily="@font/notosanscjkkr_bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/item_cart_normal_goods_up_bn"/>
+
+    <ImageView
+        android:id="@+id/item_cart_normal_goods_delete_iv"
+        android:layout_width="16dp"
+        android:layout_height="16dp"
+        android:src="@drawable/ic_cart_delete"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,6 +1,78 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-             android:layout_width="match_parent"
-             android:layout_height="match_parent">
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_marginBottom="-5dp">
+
+    <TextView
+        android:id="@+id/item_price_flowers_date_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="22.08.01"
+        android:textColor="@color/black"
+        android:fontFamily="@font/notosanscjkkr_regular"
+        android:textSize="11sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <TextView
+        android:id="@+id/item_price_flowers_name_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="플로레 화원"
+        android:textColor="@color/black"
+        android:fontFamily="@font/notosanscjkkr_regular"
+        android:textSize="11sp"
+
+        app:layout_constraintStart_toEndOf="@+id/item_price_flowers_date_tv"
+        app:layout_constraintEnd_toStartOf="@id/item_price_flowers_standard_tv"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <TextView
+        android:id="@+id/item_price_flowers_standard_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="한 단당 "
+        android:textColor="@color/black"
+        android:fontFamily="@font/notosanscjkkr_regular"
+        android:textSize="10sp"
+        android:layout_marginEnd="5dp"
+        app:layout_constraintEnd_toStartOf="@id/item_price_flowers_price_tv"
+        app:layout_constraintTop_toTopOf="@id/item_price_flowers_price_tv"
+        app:layout_constraintBottom_toBottomOf="@id/item_price_flowers_price_tv"/>
+
+    <TextView
+        android:id="@+id/item_price_flowers_price_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="7500"
+        android:textColor="@color/black"
+        android:fontFamily="@font/notosanscjkkr_bold"
+        android:textSize="11sp"
+        app:layout_constraintEnd_toStartOf="@id/item_price_flowers_won_tv"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <TextView
+        android:id="@+id/item_price_flowers_won_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="원"
+        android:textColor="@color/black"
+        android:fontFamily="@font/notosanscjkkr_regular"
+        android:textSize="10sp"
+        android:layout_marginEnd="5dp"
+        app:layout_constraintEnd_toStartOf="@id/item_price_flowers_updown_iv"
+        app:layout_constraintTop_toTopOf="@id/item_price_flowers_price_tv"
+        app:layout_constraintBottom_toBottomOf="@id/item_price_flowers_price_tv"/>
+
+    <ImageView
+        android:id="@+id/item_price_flowers_updown_iv"
+        android:layout_width="10dp"
+        android:layout_height="10dp"
+        android:src="@drawable/ic_price_up"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/item_price_flowers_price_tv"
+        app:layout_constraintBottom_toBottomOf="@id/item_price_flowers_price_tv"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
