@@ -23,7 +23,8 @@
         <activity android:name=".ui.signup.SignupActivity"/>
         <activity android:name=".ui.main.community.detail.CommunityDetailActivity"/>
         <activity android:name=".ui.main.community.CommunityWriteActivity"/>
-        <activity android:name=".ui.FlowerDetailActivity"/>
+        <activity android:name=".ui.flower.FlowerDetailActivity"/>
+        <activity android:name=".ui.flower.FlowerListActivity"/>
     </application>
 
 </manifest>

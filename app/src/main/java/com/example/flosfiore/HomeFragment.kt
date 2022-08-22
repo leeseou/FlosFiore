@@ -11,7 +11,8 @@ import com.example.flosfiore.data.entities.Flower
 import com.example.flosfiore.data.entities.Instagram
 import com.example.flosfiore.data.entities.Store
 import com.example.flosfiore.databinding.FragmentHomeBinding
-import com.example.flosfiore.ui.FlowerDetailActivity
+import com.example.flosfiore.ui.flower.FlowerDetailActivity
+import com.example.flosfiore.ui.flower.FlowerListActivity
 import com.google.android.material.tabs.TabLayoutMediator
 
 // 홈 프레그먼트
@@ -38,6 +39,10 @@ class HomeFragment : Fragment() {
 
         binding.homeLocationTv.setOnClickListener {
             startActivity(Intent(requireContext(), FlowerDetailActivity::class.java))
+        }
+
+        binding.homeViewAllBtn.setOnClickListener {
+            startActivity(Intent(requireContext(), FlowerListActivity::class.java))
         }
 
         return binding.root
