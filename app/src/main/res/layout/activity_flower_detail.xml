@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto">
@@ -39,9 +40,10 @@
                 app:layout_constraintEnd_toEndOf="@id/flower_detail_main_vp"/>
 
             <ImageView
-                android:layout_width="10dp"
+                android:layout_width="20dp"
                 android:layout_height="20dp"
                 android:layout_marginStart="16dp"
+                android:layout_marginTop="24dp"
                 android:src="@drawable/ic_back"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintStart_toStartOf="parent"/>
@@ -50,7 +52,8 @@
                 android:layout_width="20dp"
                 android:layout_height="20dp"
                 android:layout_marginEnd="16dp"
-                android:src="@drawable/ic_bottom_cart"
+                android:layout_marginTop="24dp"
+                android:src="@drawable/ic_flower_cart"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintEnd_toStartOf="@id/flower_detail_search_iv"/>
 
@@ -59,7 +62,8 @@
                 android:layout_width="20dp"
                 android:layout_height="20dp"
                 android:layout_marginEnd="16dp"
-                android:src="@drawable/ic_home_search"
+                android:layout_marginTop="24dp"
+                android:src="@drawable/ic_flower_search"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"/>
 
@@ -141,7 +145,7 @@
                 <ImageView
                     android:layout_width="17.08dp"
                     android:layout_height="20dp"
-                    android:src="@drawable/ic_share"
+                    android:src="@drawable/ic_share_grey"
                     app:layout_constraintTop_toTopOf="@id/flower_detail_price_llayout"
                     app:layout_constraintBottom_toBottomOf="@id/flower_detail_price_llayout"
                     app:layout_constraintEnd_toEndOf="parent"/>
@@ -196,14 +200,14 @@
 
                 <TextView
                     android:id="@+id/flower_detail_more_tv"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="상품 정보"
-                    android:textSize="11sp"
-                    android:textColor="@color/black"
+                    android:layout_width="38dp"
+                    android:layout_height="28dp"
                     android:fontFamily="@font/notosanscjkkr_bold"
-                    app:layout_constraintTop_toBottomOf="@id/flower_detail_divider_view"
-                    app:layout_constraintStart_toStartOf="parent"/>
+                    android:text="상품 정보"
+                    android:textColor="@color/black"
+                    android:textSize="11sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/flower_detail_divider_view" />
 
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:id="@+id/flower_detail_more_clayout"
@@ -401,7 +405,7 @@
                 android:id="@+id/flower_detail_like_iv"
                 android:layout_width="16.69dp"
                 android:layout_height="18dp"
-                android:src="@drawable/ic_community_like"
+                android:src="@drawable/ic_like_green"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintStart_toStartOf="parent"/>
 
@@ -420,7 +424,7 @@
                 android:id="@+id/flower_detail_share_iv"
                 android:layout_width="15.37dp"
                 android:layout_height="18dp"
-                android:src="@drawable/ic_share"
+                android:src="@drawable/ic_share_green"
                 app:layout_constraintTop_toTopOf="@id/flower_detail_like_iv"
                 app:layout_constraintStart_toStartOf="@id/flower_detail_share_tv"
                 app:layout_constraintEnd_toEndOf="@id/flower_detail_share_tv"/>
