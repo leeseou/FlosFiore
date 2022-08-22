@@ -1,4 +1,4 @@
-package com.example.flosfiore.ui.main.community
+package com.example.flosfiore.ui.main.community.detail
 
 import android.os.Bundle
 import android.view.MenuItem
@@ -41,13 +41,19 @@ class CommunityDetailActivity: AppCompatActivity() {
         var post = intent.getSerializableExtra("post") as Post
         binding.communityDetailWriterTv.text = post.writer
         binding.communityDetailTitleTv.text = post.title
-        binding.communityDetailContentTv.text = post.content
         binding.communityDetailCommentTv.text = post.comment.toString()
         binding.communityDetailLikeTv.text = post.like.toString()
+
         if(post.img == null) {
             binding.communityDetailImgCv.visibility = View.GONE
         } else {
             binding.communityDetailImgIv.setImageResource(post.img!!)
+        }
+
+        if (post.content == null) {
+            binding.communityDetailContentTv.visibility = View.GONE
+        } else {
+            binding.communityDetailContentTv.text = post.content
         }
     }
 }
