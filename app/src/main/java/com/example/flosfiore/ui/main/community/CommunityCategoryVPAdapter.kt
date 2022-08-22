@@ -9,9 +9,9 @@ class CommunityCategoryVPAdapter(fragment : Fragment) : FragmentStateAdapter(fra
 
     override fun createFragment(position: Int): Fragment {
         return when (position) {
-            0 -> HomeCategoryFragment()
+            0 -> CommunityGalleryFragment()
             1 -> HomeCategoryFragment()
-            2 -> HomeCategoryFragment()
+            2 -> CommunityPostFragment()
             3 -> HomeCategoryFragment()
             else -> HomeCategoryFragment()
         }

@@ -18,6 +18,7 @@ class SignupActivity: AppCompatActivity() {
         setToolBar()
     }
 
+    // toolbar 뒤로가기 clickListener
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         val id = item.itemId
         when (id) {

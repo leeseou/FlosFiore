@@ -1,5 +1,6 @@
 package com.example.flosfiore
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -10,6 +11,7 @@ import com.example.flosfiore.data.entities.Flower
 import com.example.flosfiore.data.entities.Instagram
 import com.example.flosfiore.data.entities.Store
 import com.example.flosfiore.databinding.FragmentHomeBinding
+import com.example.flosfiore.ui.FlowerDetailActivity
 import com.google.android.material.tabs.TabLayoutMediator
 
 // 홈 프레그먼트
@@ -33,6 +35,10 @@ class HomeFragment : Fragment() {
         }.attach()
 
         setRVAdapters()
+
+        binding.homeLocationTv.setOnClickListener {
+            startActivity(Intent(requireContext(), FlowerDetailActivity::class.java))
+        }
 
         return binding.root
     }

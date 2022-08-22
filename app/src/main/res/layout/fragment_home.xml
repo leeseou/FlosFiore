@@ -12,7 +12,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="16dp"
-        android:layout_marginTop="24dp">
+        android:layout_marginTop="24dp"
+        android:paddingBottom="50dp">
 
         <LinearLayout
             android:id="@+id/home_location_llayout"
@@ -324,12 +325,14 @@
 
             <ImageView
                 android:layout_width="16dp"
-                android:layout_height="8dp"
-                android:src="@drawable/ic_home_more"/>
+                android:layout_height="20dp"
+                android:layout_marginEnd="5dp"
+                android:src="@drawable/ic_home_refresh"/>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="-1dp"
                 android:text="상품 새로 보기 1/5"
                 android:textColor="@color/main_green1"
                 android:textSize="14sp"
