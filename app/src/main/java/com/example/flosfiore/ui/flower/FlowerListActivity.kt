@@ -5,17 +5,11 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.appcompat.app.AppCompatActivity
-import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.RecyclerView
-import com.example.flosfiore.HomeCategoryVPAdapter
 import com.example.flosfiore.R
 import com.example.flosfiore.data.entities.Flower
-import com.example.flosfiore.data.entities.Post
 import com.example.flosfiore.databinding.ActivityFlowerListBinding
 import com.example.flosfiore.databinding.FragmentFlowerListBinding
-import com.example.flosfiore.databinding.ItemFlowerListBinding
-import com.example.flosfiore.ui.main.community.PostRVAdapter
-import com.example.flosfiore.ui.main.community.detail.CommunityDetailActivity
 import com.google.android.material.tabs.TabLayoutMediator
 
 class FlowerListActivity: AppCompatActivity() {

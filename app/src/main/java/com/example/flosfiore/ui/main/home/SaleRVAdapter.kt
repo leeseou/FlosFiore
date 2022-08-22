@@ -1,13 +1,13 @@
-package com.example.flosfiore
+package com.example.flosfiore.ui.main.home
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.flosfiore.data.entities.Flower
-import com.example.flosfiore.databinding.ItemHomeBest10Binding
+import com.example.flosfiore.databinding.ItemHomeSaleBinding
 
-class Best10RVAdapter (private val datalist : ArrayList<Flower>) :
-        RecyclerView.Adapter<Best10RVAdapter.ViewHolder>() {
+class SaleRVAdapter (private val datalist : ArrayList<Flower>) :
+        RecyclerView.Adapter<SaleRVAdapter.ViewHolder>() {
 
         interface MyItemClickListener{
             fun onItemClick(flower: Flower)
@@ -29,7 +29,7 @@ class Best10RVAdapter (private val datalist : ArrayList<Flower>) :
         }
 
         override fun onCreateViewHolder(viewGroup: ViewGroup, viewType: Int): ViewHolder {
-            val binding : ItemHomeBest10Binding = ItemHomeBest10Binding.inflate(LayoutInflater.from(viewGroup.context), viewGroup, false)
+            val binding : ItemHomeSaleBinding = ItemHomeSaleBinding.inflate(LayoutInflater.from(viewGroup.context), viewGroup, false)
 
             return ViewHolder(binding)
         }
@@ -42,11 +42,12 @@ class Best10RVAdapter (private val datalist : ArrayList<Flower>) :
 
         override fun getItemCount(): Int = datalist.size
 
-        inner class ViewHolder(val binding : ItemHomeBest10Binding) : RecyclerView.ViewHolder(binding.root) {
+        inner class ViewHolder(val binding : ItemHomeSaleBinding) : RecyclerView.ViewHolder(binding.root) {
             fun bind(flower: Flower) {
-                binding.itemHomeMainIv.setImageResource(flower.img!!)
-                binding.itemHomePriceTv.text = flower.price.toString()
-                binding.itemHomeNameTv.text = "[" + flower.store + "] " + flower.name
+                binding.itemSaleMainIv.setImageResource(flower.img!!)
+                binding.itemSalePercentTv.text = flower.sale.toString() + "%"
+                binding.itemSalePriceTv.text = flower.price.toString()
+                binding.itemSaleNameTv.text = "[" + flower.store + "] " + flower.name
             }
         }
 

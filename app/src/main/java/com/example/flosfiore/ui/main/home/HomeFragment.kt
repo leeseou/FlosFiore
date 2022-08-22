@@ -1,4 +1,4 @@
-package com.example.flosfiore
+package com.example.flosfiore.ui.main.home
 
 import android.content.Intent
 import android.os.Bundle
@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.GridLayoutManager
+import com.example.flosfiore.*
 import com.example.flosfiore.data.entities.Flower
 import com.example.flosfiore.data.entities.Instagram
 import com.example.flosfiore.data.entities.Store
@@ -85,9 +86,11 @@ class HomeFragment : Fragment() {
 
         // 인스타그램
         var instagramList = arrayListOf(
-            Instagram(R.drawable.img_home_test, "회색 도시를 녹색으로 바꾸는 '플랜테리어'",
+            Instagram(
+                R.drawable.img_home_test, "회색 도시를 녹색으로 바꾸는 '플랜테리어'",
                 "유럽에서는 가정이나 사무실 등에서 식물을 인테리어로 활용하는 플랜테리어(Plant+Interior)가 여전히 큰 인기를...", 52),
-            Instagram(R.drawable.img_home_test, "회색 도시를 녹색으로 바꾸는 '플랜테리어'",
+            Instagram(
+                R.drawable.img_home_test, "회색 도시를 녹색으로 바꾸는 '플랜테리어'",
                 "유럽에서는 가정이나 사무실 등에서 식물을 인테리어로 활용하는 플랜테리어(Plant+Interior)가 여전히 큰 인기를...", 52)
         )
 

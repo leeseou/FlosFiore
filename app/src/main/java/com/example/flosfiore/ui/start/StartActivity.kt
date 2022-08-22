@@ -5,9 +5,6 @@ import android.view.View
 import android.widget.ImageView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.marginStart
-import androidx.core.view.marginTop
-import com.example.flosfiore.HomeFragment
 import com.example.flosfiore.R
 import com.example.flosfiore.databinding.ActivityStartBinding
 

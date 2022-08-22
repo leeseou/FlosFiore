@@ -1,4 +1,4 @@
-package com.example.flosfiore
+package com.example.flosfiore.ui.main.home
 
 import androidx.fragment.app.Fragment
 import androidx.viewpager2.adapter.FragmentStateAdapter

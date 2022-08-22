@@ -1,16 +1,16 @@
-package com.example.flosfiore
+package com.example.flosfiore.ui.main.home
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.example.flosfiore.data.entities.Store
-import com.example.flosfiore.databinding.ItemHomePopularBinding
+import com.example.flosfiore.data.entities.Instagram
+import com.example.flosfiore.databinding.ItemHomeInstaBinding
 
-class PopularRVAdapter (private val datalist : ArrayList<Store>) :
-        RecyclerView.Adapter<PopularRVAdapter.ViewHolder>() {
+class InstagramRVAdapter (private val datalist : ArrayList<Instagram>) :
+        RecyclerView.Adapter<InstagramRVAdapter.ViewHolder>() {
 
         interface MyItemClickListener{
-            fun onItemClick(store: Store)
+            fun onItemClick(instagram: Instagram)
         }
 
         private lateinit var mItemClickListener : MyItemClickListener
@@ -18,8 +18,8 @@ class PopularRVAdapter (private val datalist : ArrayList<Store>) :
             mItemClickListener = itemClickListener
         }
 
-        fun addItem(store: Store) {
-            datalist.add(store)
+        fun addItem(instagram: Instagram) {
+            datalist.add(instagram)
             notifyDataSetChanged()
         }
 
@@ -29,7 +29,7 @@ class PopularRVAdapter (private val datalist : ArrayList<Store>) :
         }
 
         override fun onCreateViewHolder(viewGroup: ViewGroup, viewType: Int): ViewHolder {
-            val binding : ItemHomePopularBinding = ItemHomePopularBinding.inflate(LayoutInflater.from(viewGroup.context), viewGroup, false)
+            val binding : ItemHomeInstaBinding = ItemHomeInstaBinding.inflate(LayoutInflater.from(viewGroup.context), viewGroup, false)
 
             return ViewHolder(binding)
         }
@@ -42,11 +42,12 @@ class PopularRVAdapter (private val datalist : ArrayList<Store>) :
 
         override fun getItemCount(): Int = datalist.size
 
-        inner class ViewHolder(val binding : ItemHomePopularBinding) : RecyclerView.ViewHolder(binding.root) {
-            fun bind(store: Store) {
-                binding.itemPopularMainIv.setImageResource(store.img!!)
-                binding.itemPopularNameTv.text = store.name
-                binding.itemPopularLocationTv.text = store.location
+        inner class ViewHolder(val binding : ItemHomeInstaBinding) : RecyclerView.ViewHolder(binding.root) {
+            fun bind(instagram: Instagram) {
+                binding.itemInstaMainIv.setImageResource(instagram.img!!)
+                binding.itemInstaTitleTv.text = instagram.title
+                binding.itemInstaContentTv.text = instagram.content
+                binding.itemInstaLikeTv.text = instagram.like.toString()
             }
         }
 

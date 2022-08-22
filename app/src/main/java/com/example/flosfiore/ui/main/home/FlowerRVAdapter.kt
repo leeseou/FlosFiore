@@ -1,10 +1,9 @@
-package com.example.flosfiore
+package com.example.flosfiore.ui.main.home
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.flosfiore.data.entities.Flower
-import com.example.flosfiore.databinding.ItemHomeBest10Binding
 import com.example.flosfiore.databinding.ItemHomeFlowerBinding
 
 class FlowerRVAdapter (private val datalist : ArrayList<Flower>) :

@@ -1,4 +1,4 @@
-package com.example.flosfiore
+package com.example.flosfiore.ui.main.home
 
 import android.os.Bundle
 import android.view.LayoutInflater
