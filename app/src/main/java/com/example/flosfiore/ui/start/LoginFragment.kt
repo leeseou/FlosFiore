@@ -64,7 +64,7 @@ class LoginFragment : Fragment(), LoginView {
                 startActivity(Intent(requireContext(), MainActivity::class.java))
             }
             else -> {
-                
+
             }
         }
 

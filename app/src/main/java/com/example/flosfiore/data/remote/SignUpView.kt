@@ -2,5 +2,5 @@ package com.example.flosfiore.data.remote
 
 interface SignUpView {
     fun onSignUpSuccess()
-    fun onSignUpFailure()
+    fun onSignUpFailure(code: Int)
 }

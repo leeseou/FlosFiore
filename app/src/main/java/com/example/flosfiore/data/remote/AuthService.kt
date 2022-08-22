@@ -21,7 +21,29 @@ class AuthService {
 
     // 회원가입
     fun signUp(user: User) {
+        val signUpService = getRetrofit().create(AuthRetrofitInterface::class.java)
 
+        signUpService.signUp(user).enqueue(object : Callback<AuthResponse> {
+            override fun onResponse(call: Call<AuthResponse>, response: Response<AuthResponse>) {
+                if (response.isSuccessful && response.code() == 200) {
+                    val signUpResponse: AuthResponse = response.body()!!
+
+                    Log.d("SIGNUP-RESPONSE", signUpResponse.toString())
+
+                    when (val code = signUpResponse.code) {
+                        1000 -> signUpView.onSignUpSuccess()
+                        else -> {
+                            signUpView.onSignUpFailure(code)
+                        }
+                    }
+                }
+            }
+
+            override fun onFailure(call: Call<AuthResponse>, t: Throwable) {
+                //연결 실패
+                Log.d("SIGNUP/FAILURE", t.message.toString())
+            }
+        })
     }
 
     // 로그인
