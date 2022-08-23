@@ -16,6 +16,7 @@ import com.example.flosfiore.data.entities.GoodsNormal
 import com.example.flosfiore.data.entities.GoodsOvernight
 import com.example.flosfiore.databinding.FragmentCartBinding
 import com.example.flosfiore.ui.main.MainActivity
+import com.example.flosfiore.ui.main.home.HomeFragment
 
 // 장바구니 프레그먼트
 class CartFragment : Fragment() {
@@ -76,6 +77,15 @@ class CartFragment : Fragment() {
             goodsNormalAdapter.removeSelected()
             goodsOvernightAdapter.removeSelected()
             updateViews()
+        }
+
+        binding.cartAddGoodsBtn.setOnClickListener {
+            var activity = activity as MainActivity
+            activity.supportFragmentManager
+                .beginTransaction()
+                .replace(R.id.main_frm, HomeFragment())
+                .commitAllowingStateLoss()
+            activity.binding.bottomNavigationView.selectedItemId = R.id.homeFragment
         }
 
         return binding.root

@@ -410,6 +410,7 @@
             android:fontFamily="@font/notosanscjkkr_regular"/>
 
         <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/cart_add_goods_btn"
             android:layout_width="188dp"
             android:layout_height="50dp"
             android:layout_marginTop="28dp"
