@@ -38,6 +38,7 @@ class CartFragment : Fragment() {
         (activity as MainActivity).setSupportActionBar(binding.cartToolbarTb)
         (activity as MainActivity).supportActionBar?.setDisplayShowTitleEnabled(false)
         (activity as MainActivity).supportActionBar?.setDisplayHomeAsUpEnabled(true)
+        (activity as MainActivity).supportActionBar?.setHomeAsUpIndicator(R.drawable.ic_back_black)
 
         // 당일 배송 리사이클러뷰
         // 꽃 가격

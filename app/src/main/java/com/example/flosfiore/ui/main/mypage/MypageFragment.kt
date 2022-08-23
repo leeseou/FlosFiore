@@ -1,10 +1,9 @@
 package com.example.flosfiore.ui.main.mypage
 
 import android.os.Bundle
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
+import android.view.*
 import androidx.fragment.app.Fragment
+import com.example.flosfiore.R
 import com.example.flosfiore.databinding.FragmentMypageBinding
 import com.example.flosfiore.ui.main.MainActivity
 
@@ -23,9 +22,16 @@ class MypageFragment : Fragment() {
         (activity as MainActivity).setSupportActionBar(binding.mypageToolbarTb)
         (activity as MainActivity).supportActionBar?.setDisplayShowTitleEnabled(false)
         (activity as MainActivity).supportActionBar?.setDisplayHomeAsUpEnabled(true)
+        (activity as MainActivity).supportActionBar?.setHomeAsUpIndicator(R.drawable.ic_back_black)
 
         return binding.root
     }
+
+
+//    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
+//        inflater.inflate(R.menu.toolbar_menu, menu)
+//        super.onCreateOptionsMenu(menu, inflater)
+//    }
 
 
 }

@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import com.example.flosfiore.R
 import com.example.flosfiore.ui.main.MainActivity
 import com.example.flosfiore.databinding.FragmentCommunityBinding
 import com.google.android.material.tabs.TabLayoutMediator
@@ -34,6 +35,7 @@ class CommunityFragment : Fragment() {
         (activity as MainActivity).setSupportActionBar(binding.communityToolbarTb)
         (activity as MainActivity).supportActionBar?.setDisplayShowTitleEnabled(false)
         (activity as MainActivity).supportActionBar?.setDisplayHomeAsUpEnabled(true)
+        (activity as MainActivity).supportActionBar?.setHomeAsUpIndicator(R.drawable.ic_back_black)
 
         binding.communityWriteCiv.setOnClickListener {
             startActivity(Intent(requireContext(), CommunityWriteActivity::class.java))

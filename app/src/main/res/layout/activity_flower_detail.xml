@@ -40,6 +40,7 @@
                 app:layout_constraintEnd_toEndOf="@id/flower_detail_main_vp"/>
 
             <ImageView
+                android:id="@+id/flower_detail_back_iv"
                 android:layout_width="20dp"
                 android:layout_height="20dp"
                 android:layout_marginStart="16dp"
@@ -49,6 +50,7 @@
                 app:layout_constraintStart_toStartOf="parent"/>
 
             <ImageView
+                android:id="@+id/flower_detail_cart_iv"
                 android:layout_width="20dp"
                 android:layout_height="20dp"
                 android:layout_marginEnd="16dp"

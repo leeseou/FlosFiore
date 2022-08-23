@@ -3,6 +3,7 @@ package com.example.flosfiore.ui.main.community
 import android.os.Bundle
 import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
+import com.example.flosfiore.R
 import com.example.flosfiore.databinding.ActivityCommunityWriteBinding
 
 class CommunityWriteActivity: AppCompatActivity() {
@@ -35,5 +36,6 @@ class CommunityWriteActivity: AppCompatActivity() {
         setSupportActionBar(binding.communityWriteToolbarTb)
         supportActionBar?.setDisplayShowTitleEnabled(false)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
+        supportActionBar?.setHomeAsUpIndicator(R.drawable.ic_back_black)
     }
 }
