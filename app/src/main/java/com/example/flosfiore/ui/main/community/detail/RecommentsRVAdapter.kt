@@ -4,6 +4,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.example.flosfiore.R
 import com.example.flosfiore.data.entities.Comment
 import com.example.flosfiore.databinding.ItemCommunityReCommentsBinding
 
@@ -38,6 +39,8 @@ class RecommentsRVAdapter (private val datalist : ArrayList<Comment>) :
         fun bind(comment: Comment) {
             if(comment.img != null) {
                 binding.itemCommunityCommentsProfileCiv.setImageResource(comment.img!!)
+            } else {
+                binding.itemCommunityCommentsProfileCiv.setImageResource(R.drawable.ic_mypage_profile)
             }
             binding.itemCommunityCommentsWriterTv.text = comment.writer
             binding.itemCommunityCommentsTv.text = comment.content
