@@ -5,6 +5,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.flosfiore.data.entities.GoodsNormal
 import com.example.flosfiore.databinding.ItemCartNormalGoodsBinding
+import java.text.DecimalFormat
 
 class GoodsNormalRVAdapter(private val goodsNormalList: ArrayList<GoodsNormal>) : RecyclerView.Adapter<GoodsNormalRVAdapter.ViewHolder>() {
 
@@ -119,14 +120,15 @@ class GoodsNormalRVAdapter(private val goodsNormalList: ArrayList<GoodsNormal>) 
 
     inner class ViewHolder(val binding: ItemCartNormalGoodsBinding) : RecyclerView.ViewHolder(binding.root) {
 
+        private val dec = DecimalFormat("#,###")
         fun bind(goodsNormal: GoodsNormal) {
             binding.itemCartNormalGoodsSelectIv.setImageResource(goodsNormal.select!!)
             binding.itemCartNormalGoodsImgIv.setImageResource(goodsNormal.img!!)
             binding.itemCartNormalGoodsPlaceTv.text = goodsNormal.place
             binding.itemCartNormalGoodsNameTv.text = goodsNormal.name
             binding.itemCartNormalGoodsColorTv.text = goodsNormal.color
-            binding.itemCartNormalGoodsCenterBn.text = "${goodsNormal.count}"
-            binding.itemCartNormalGoodsPriceTv.text = "${goodsNormal.total}원"
+            binding.itemCartNormalGoodsCenterBn.text = "${dec.format(goodsNormal.count)}"
+            binding.itemCartNormalGoodsPriceTv.text = "${dec.format(goodsNormal.total)}원"
 
         }
 

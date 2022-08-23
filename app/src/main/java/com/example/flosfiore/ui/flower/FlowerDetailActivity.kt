@@ -1,5 +1,6 @@
 package com.example.flosfiore.ui.flower
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -7,6 +8,7 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.RecyclerView
+import com.example.flosfiore.PriceActivity
 import com.example.flosfiore.R
 import com.example.flosfiore.data.entities.Flower
 import com.example.flosfiore.databinding.ActivityFlowerDetailBinding
@@ -31,6 +33,10 @@ class FlowerDetailActivity:AppCompatActivity() {
                 tab, position ->
             binding.flowerDetailMainVp.setCurrentItem(tab.position)
         }.attach()
+
+        binding.flowerDetailMoreBtn.setOnClickListener {
+            startActivity(Intent(this, PriceActivity::class.java))
+        }
     }
 
     // 화면 초기화

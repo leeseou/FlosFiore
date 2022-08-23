@@ -6,6 +6,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.flosfiore.data.entities.GoodsOvernight
 import com.example.flosfiore.databinding.FragmentCartBinding
 import com.example.flosfiore.databinding.ItemCartOvernightGoodsBinding
+import java.text.DecimalFormat
 
 class GoodsOvernightRVAdapter(private val goodsOvernightList: ArrayList<GoodsOvernight>) : RecyclerView.Adapter<GoodsOvernightRVAdapter.ViewHolder>() {
 
@@ -116,14 +117,15 @@ class GoodsOvernightRVAdapter(private val goodsOvernightList: ArrayList<GoodsOve
 
     inner class ViewHolder(val binding: ItemCartOvernightGoodsBinding) : RecyclerView.ViewHolder(binding.root) {
 
+        private val dec = DecimalFormat("#,###")
         fun bind(goodsOvernight: GoodsOvernight) {
             binding.itemCartOvernightGoodsSelectIv.setImageResource(goodsOvernight.select!!)
             binding.itemCartOvernightGoodsImgIv.setImageResource(goodsOvernight.img!!)
             binding.itemCartOvernightGoodsPlaceTv.text = goodsOvernight.place
             binding.itemCartOvernightGoodsNameTv.text = goodsOvernight.name
             binding.itemCartOvernightGoodsColorTv.text = goodsOvernight.color
-            binding.itemCartOvernightGoodsCenterBn.text = "${goodsOvernight.count}"
-            binding.itemCartOvernightGoodsPriceTv.text = "${goodsOvernight.total}원"
+            binding.itemCartOvernightGoodsCenterBn.text = "${dec.format(goodsOvernight.count)}"
+            binding.itemCartOvernightGoodsPriceTv.text = "${dec.format(goodsOvernight.total)}원"
 
         }
 

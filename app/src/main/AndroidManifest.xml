@@ -27,6 +27,7 @@
         <activity android:name=".ui.main.community.CommunityWriteActivity"/>
         <activity android:name=".ui.flower.FlowerDetailActivity"/>
         <activity android:name=".ui.flower.FlowerListActivity"/>
+        <activity android:name=".PriceActivity"/>
     </application>
 
 </manifest>
