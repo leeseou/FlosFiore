@@ -21,10 +21,30 @@
     <ImageView
         android:id="@+id/cart_title_tv"
         android:layout_width="match_parent"
-        android:layout_height="64dp"
+        android:layout_height="1dp"
         android:src="@drawable/img_home_store2"
         android:scaleType="centerCrop"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/cart_toolbar_tb"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <TextView
+            android:id="@+id/communty_title_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="64dp"
+            android:layout_gravity="center"
+            android:text="장바구니"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            android:fontFamily="@font/notosanscjkkr_bold"/>
+
+    </androidx.appcompat.widget.Toolbar>
 
 
     <androidx.core.widget.NestedScrollView
@@ -32,7 +52,7 @@
         android:layout_height="wrap_content"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/cart_title_tv">
+        app:layout_constraintTop_toBottomOf="@id/cart_toolbar_tb">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -50,32 +70,43 @@
                     android:layout_width="24dp"
                     android:layout_height="24dp"
                     android:src="@drawable/ic_cart_select"
+                    android:visibility="visible"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"/>
 
+                <ImageView
+                    android:id="@+id/cart_all_not_select_iv"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:src="@drawable/ic_cart_not_select"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:visibility="invisible"/>
+
                 <TextView
-                    android:id="@+id/cart"
+                    android:id="@+id/cart_all_select_tv"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="전체선택"
                     android:textColor="@color/black"
                     android:fontFamily="@font/notosanscjkkr_regular"
                     android:textSize="16sp"
-                    android:layout_marginStart="10dp"
-                    app:layout_constraintStart_toEndOf="@id/cart_all_select_iv"
-                    app:layout_constraintTop_toTopOf="@id/cart_all_select_iv"
-                    app:layout_constraintBottom_toBottomOf="@id/cart_all_select_iv"/>
+                    android:layout_marginStart="30dp"
+                    android:layout_marginTop="-12dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
+                    android:id="@+id/cart_select_delete_tv"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="선택삭제"
                     android:textColor="@color/main_gray1"
                     android:fontFamily="@font/notosanscjkkr_regular"
                     android:textSize="14sp"
+                    android:layout_marginTop="-12dp"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toTopOf="@id/cart_all_select_iv"
-                    app:layout_constraintBottom_toBottomOf="@id/cart_all_select_iv"/>
+                    app:layout_constraintTop_toTopOf="parent"/>
 
 
             </androidx.constraintlayout.widget.ConstraintLayout>
@@ -132,7 +163,6 @@
             <View
                 android:layout_width="match_parent"
                 android:layout_height="12dp"
-                android:layout_marginTop="20dp"
                 android:layout_marginBottom="20dp"
                 android:background="#F1F1F1" />
 
@@ -169,7 +199,6 @@
             <View
                 android:layout_width="match_parent"
                 android:layout_height="12dp"
-                android:layout_marginTop="20dp"
                 android:layout_marginBottom="20dp"
                 android:background="#F1F1F1" />
 
@@ -190,6 +219,7 @@
                     app:layout_constraintTop_toTopOf="parent"/>
 
                 <TextView
+                    android:id="@+id/cart_payment_goods_count_tv"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="총 3개"
@@ -275,7 +305,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="상품 금액"
+                android:text="총 배송비"
                 android:textSize="14sp"
                 android:textColor="@color/main_gray1"
                 android:fontFamily="@font/notosanscjkkr_regular"
@@ -331,16 +361,40 @@
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
-            <Button
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="60dp"
                 android:layout_marginHorizontal="16dp"
                 android:layout_marginTop="30dp"
-                android:backgroundTint="@color/main_green1"
-                android:textColor="@color/white"
-                android:textSize="16sp"
-                android:fontFamily="@font/notosanscjkkr_regular"
-                android:text="총 3개  |  217,000원 결제하기"/>
+                android:gravity="center"
+                android:background="@drawable/login_btn_border"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/cart_total_count_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="#80FFFFFF"
+                    android:textSize="16sp"
+                    android:fontFamily="@font/notosanscjkkr_regular"
+                    android:gravity="center"
+                    android:text="총 3개   |" />
+
+
+                <TextView
+                    android:id="@+id/cart_total_price_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/white"
+                    android:textSize="16sp"
+                    android:fontFamily="@font/notosanscjkkr_regular"
+                    android:text="217,000원 결제하기"
+                    android:layout_marginStart="15dp"/>
+
+
+            </LinearLayout>
+
+
 
         </LinearLayout>
 

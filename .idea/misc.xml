@@ -4,19 +4,26 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/USER/AndroidStudioProjects/UMCProject/FlosFiore_And/app/src/main/res/drawable/btm_color_selector.xml" value="0.176" />
+        <entry key="..\:/Users/USER/AndroidStudioProjects/UMCProject/FlosFiore_And/app/src/main/res/drawable/flower_detail_box_border.xml" value="0.2005" />
+        <entry key="..\:/Users/USER/AndroidStudioProjects/UMCProject/FlosFiore_And/app/src/main/res/drawable/flower_detail_btn_border.xml" value="0.2005" />
+        <entry key="..\:/Users/USER/AndroidStudioProjects/UMCProject/FlosFiore_And/app/src/main/res/drawable/frame_round_top.xml" value="0.2005" />
+        <entry key="..\:/Users/USER/AndroidStudioProjects/UMCProject/FlosFiore_And/app/src/main/res/drawable/home_search_border.xml" value="0.2005" />
+        <entry key="..\:/Users/USER/AndroidStudioProjects/UMCProject/FlosFiore_And/app/src/main/res/drawable/home_tab_selector.xml" value="0.2005" />
         <entry key="..\:/Users/USER/AndroidStudioProjects/UMCProject/FlosFiore_And/app/src/main/res/drawable/ic_cart_add_button.xml" value="0.1" />
         <entry key="..\:/Users/USER/AndroidStudioProjects/UMCProject/FlosFiore_And/app/src/main/res/drawable/ic_cart_delete_button.xml" value="0.1" />
         <entry key="..\:/Users/USER/AndroidStudioProjects/UMCProject/FlosFiore_And/app/src/main/res/drawable/ic_cart_num_button.xml" value="0.1" />
         <entry key="..\:/Users/USER/AndroidStudioProjects/UMCProject/FlosFiore_And/app/src/main/res/drawable/item_cart_button_round.xml" value="0.1" />
+        <entry key="..\:/Users/USER/AndroidStudioProjects/UMCProject/FlosFiore_And/app/src/main/res/drawable/login_btn_border.xml" value="0.2005" />
         <entry key="..\:/Users/USER/AndroidStudioProjects/UMCProject/FlosFiore_And/app/src/main/res/layout/activity_main.xml" value="0.2" />
-        <entry key="..\:/Users/USER/AndroidStudioProjects/UMCProject/FlosFiore_And/app/src/main/res/layout/fragment_cart.xml" value="0.236784140969163" />
+        <entry key="..\:/Users/USER/AndroidStudioProjects/UMCProject/FlosFiore_And/app/src/main/res/layout/fragment_cart.xml" value="0.2347560975609756" />
         <entry key="..\:/Users/USER/AndroidStudioProjects/UMCProject/FlosFiore_And/app/src/main/res/layout/fragment_community.xml" value="0.25" />
         <entry key="..\:/Users/USER/AndroidStudioProjects/UMCProject/FlosFiore_And/app/src/main/res/layout/fragment_home.xml" value="0.22" />
+        <entry key="..\:/Users/USER/AndroidStudioProjects/UMCProject/FlosFiore_And/app/src/main/res/layout/fragment_login.xml" value="0.28289473684210525" />
         <entry key="..\:/Users/USER/AndroidStudioProjects/UMCProject/FlosFiore_And/app/src/main/res/layout/fragment_map.xml" value="0.1" />
-        <entry key="..\:/Users/USER/AndroidStudioProjects/UMCProject/FlosFiore_And/app/src/main/res/layout/fragment_mypage.xml" value="0.25" />
+        <entry key="..\:/Users/USER/AndroidStudioProjects/UMCProject/FlosFiore_And/app/src/main/res/layout/fragment_mypage.xml" value="0.33" />
         <entry key="..\:/Users/USER/AndroidStudioProjects/UMCProject/FlosFiore_And/app/src/main/res/layout/fragment_price.xml" value="0.33" />
         <entry key="..\:/Users/USER/AndroidStudioProjects/UMCProject/FlosFiore_And/app/src/main/res/layout/item_cart_button_round.xml" value="0.2793859649122807" />
-        <entry key="..\:/Users/USER/AndroidStudioProjects/UMCProject/FlosFiore_And/app/src/main/res/layout/item_cart_normal_goods.xml" value="0.28289473684210525" />
+        <entry key="..\:/Users/USER/AndroidStudioProjects/UMCProject/FlosFiore_And/app/src/main/res/layout/item_cart_normal_goods.xml" value="0.67" />
         <entry key="..\:/Users/USER/AndroidStudioProjects/UMCProject/FlosFiore_And/app/src/main/res/layout/item_cart_overnight_goods.xml" value="0.22" />
         <entry key="..\:/Users/USER/AndroidStudioProjects/UMCProject/FlosFiore_And/app/src/main/res/layout/item_home_flower.xml" value="0.30117753623188404" />
         <entry key="..\:/Users/USER/AndroidStudioProjects/UMCProject/FlosFiore_And/app/src/main/res/layout/item_price_flowers.xml" value="0.25" />
