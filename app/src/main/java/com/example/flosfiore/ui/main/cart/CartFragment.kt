@@ -12,6 +12,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.flosfiore.GoodsNormalRVAdapter
 import com.example.flosfiore.GoodsOvernightRVAdapter
 import com.example.flosfiore.R
+import com.example.flosfiore.data.entities.Flower
 import com.example.flosfiore.data.entities.GoodsNormal
 import com.example.flosfiore.data.entities.GoodsOvernight
 import com.example.flosfiore.databinding.FragmentCartBinding
@@ -51,6 +52,12 @@ class CartFragment : Fragment() {
             GoodsNormal(R.drawable.ic_cart_select, R.drawable.img_flower_detail3,"플로레 화원","가든 꽃바구니", "핑크",1, 51000, 51000),
             GoodsNormal(R.drawable.ic_cart_select, R.drawable.img_home_sale2,"플로레 화원","가든 꽃바구니", "옐로우",1, 32000, 32000)
         )
+
+        if((activity as MainActivity).intent.getSerializableExtra("cart") != null) {
+            var flower = (activity as MainActivity).intent.getSerializableExtra("cart") as Flower
+            goodsNormal.add(GoodsNormal(R.drawable.ic_cart_select, flower.img!!, flower.store, flower.name, "", 1, flower.price, flower.price))
+
+        }
 
         setRVAdapter()
         updateViews()
