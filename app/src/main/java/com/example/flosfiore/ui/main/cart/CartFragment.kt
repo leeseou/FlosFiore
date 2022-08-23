@@ -14,6 +14,7 @@ import com.example.flosfiore.R
 import com.example.flosfiore.data.entities.GoodsNormal
 import com.example.flosfiore.data.entities.GoodsOvernight
 import com.example.flosfiore.databinding.FragmentCartBinding
+import com.example.flosfiore.ui.main.MainActivity
 
 // 장바구니 프레그먼트
 class CartFragment : Fragment() {
@@ -27,6 +28,9 @@ class CartFragment : Fragment() {
     ): View? {
         binding = FragmentCartBinding.inflate(inflater, container, false)
 
+        (activity as MainActivity).setSupportActionBar(binding.cartToolbarTb)
+        (activity as MainActivity).supportActionBar?.setDisplayShowTitleEnabled(false)
+        (activity as MainActivity).supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
         // 당일 배송 리사이클러뷰
         // 꽃 가격

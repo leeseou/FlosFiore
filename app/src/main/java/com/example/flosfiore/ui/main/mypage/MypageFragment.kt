@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.example.flosfiore.databinding.FragmentMypageBinding
+import com.example.flosfiore.ui.main.MainActivity
 
 // 마이페이지 프레그먼트
 class MypageFragment : Fragment() {
@@ -18,6 +19,10 @@ class MypageFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         binding = FragmentMypageBinding.inflate(inflater, container, false)
+
+        (activity as MainActivity).setSupportActionBar(binding.mypageToolbarTb)
+        (activity as MainActivity).supportActionBar?.setDisplayShowTitleEnabled(false)
+        (activity as MainActivity).supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
         return binding.root
     }
