@@ -33,6 +33,7 @@
             android:hint="아이디"
             android:textColorHint="#A4A4A4"
             android:textSize="12sp"
+            android:textColor="@color/black"
             android:fontFamily="@font/notosanscjkkr_medium"
             android:backgroundTint="#A4A4A4"/>
 
@@ -41,9 +42,11 @@
             android:layout_width="188dp"
             android:layout_height="44dp"
             android:paddingBottom="5dp"
+            android:inputType="textPassword"
             android:hint="비밀번호"
             android:textColorHint="#A4A4A4"
             android:textSize="12sp"
+            android:textColor="@color/black"
             android:fontFamily="@font/notosanscjkkr_medium"
             android:backgroundTint="#A4A4A4"/>
 

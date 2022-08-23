@@ -31,41 +31,55 @@
         <entry key="..\:/Users/USER/AndroidStudioProjects/UMCProject/FlosFiore_And/app/src/main/res/layout/item_price_flowers_out.xml" value="0.1" />
         <entry key="..\:/Users/USER/AndroidStudioProjects/UMCProject/FlosFiore_And/app/src/main/res/menu/bottom_menu.xml" value="0.25" />
         <entry key="..\:/Users/amand/AndroidStudioProjects/FlosFiore_And/app/src/main/res/drawable-v24/flower_detail_vp_unselected.xml" value="0.116" />
+        <entry key="..\:/Users/amand/AndroidStudioProjects/FlosFiore_And/app/src/main/res/drawable-xxxhdpi/community_detail_box_border.xml" value="0.1" />
         <entry key="..\:/Users/amand/AndroidStudioProjects/FlosFiore_And/app/src/main/res/drawable/btm_color_selector.xml" value="0.2" />
+        <entry key="..\:/Users/amand/AndroidStudioProjects/FlosFiore_And/app/src/main/res/drawable/flower_detail_box_border.xml" value="0.1" />
         <entry key="..\:/Users/amand/AndroidStudioProjects/FlosFiore_And/app/src/main/res/drawable/flower_detail_box_corder.xml" value="0.125" />
         <entry key="..\:/Users/amand/AndroidStudioProjects/FlosFiore_And/app/src/main/res/drawable/flower_detail_btn_border.xml" value="0.125" />
         <entry key="..\:/Users/amand/AndroidStudioProjects/FlosFiore_And/app/src/main/res/drawable/flower_detail_vp_indicator.xml" value="0.116" />
+        <entry key="..\:/Users/amand/AndroidStudioProjects/FlosFiore_And/app/src/main/res/drawable/flower_detail_vp_selected.xml" value="0.1" />
         <entry key="..\:/Users/amand/AndroidStudioProjects/FlosFiore_And/app/src/main/res/drawable/frame_round_top.xml" value="0.1765" />
         <entry key="..\:/Users/amand/AndroidStudioProjects/FlosFiore_And/app/src/main/res/drawable/home_btn_border.xml" value="0.122" />
         <entry key="..\:/Users/amand/AndroidStudioProjects/FlosFiore_And/app/src/main/res/drawable/home_more_border.xml" value="0.2" />
         <entry key="..\:/Users/amand/AndroidStudioProjects/FlosFiore_And/app/src/main/res/drawable/home_search_border.xml" value="0.2" />
         <entry key="..\:/Users/amand/AndroidStudioProjects/FlosFiore_And/app/src/main/res/drawable/home_tab_selector.xml" value="0.2" />
         <entry key="..\:/Users/amand/AndroidStudioProjects/FlosFiore_And/app/src/main/res/drawable/home_tb_text.xml" value="0.1265" />
+        <entry key="..\:/Users/amand/AndroidStudioProjects/FlosFiore_And/app/src/main/res/drawable/layer_flower_list_tb.xml" value="0.174" />
         <entry key="..\:/Users/amand/AndroidStudioProjects/FlosFiore_And/app/src/main/res/drawable/login_btn_border.xml" value="0.1765" />
+        <entry key="..\:/Users/amand/AndroidStudioProjects/FlosFiore_And/app/src/main/res/drawable/selector_flower_list_checkbox.xml" value="0.1705" />
         <entry key="..\:/Users/amand/AndroidStudioProjects/FlosFiore_And/app/src/main/res/drawable/selector_vp_indicator.xml" value="0.116" />
         <entry key="..\:/Users/amand/AndroidStudioProjects/FlosFiore_And/app/src/main/res/drawable/splash.xml" value="0.1765" />
         <entry key="..\:/Users/amand/AndroidStudioProjects/FlosFiore_And/app/src/main/res/drawable/start_btn_border.xml" value="0.1765" />
+        <entry key="..\:/Users/amand/AndroidStudioProjects/FlosFiore_And/app/src/main/res/drawable/vp_indicator_selector.xml" value="0.1705" />
         <entry key="..\:/Users/amand/AndroidStudioProjects/FlosFiore_And/app/src/main/res/font/app_font.xml" value="0.264" />
         <entry key="..\:/Users/amand/AndroidStudioProjects/FlosFiore_And/app/src/main/res/layout/activity_community_detail.xml" value="0.264" />
         <entry key="..\:/Users/amand/AndroidStudioProjects/FlosFiore_And/app/src/main/res/layout/activity_community_write.xml" value="0.2078804347826087" />
         <entry key="..\:/Users/amand/AndroidStudioProjects/FlosFiore_And/app/src/main/res/layout/activity_flower_detail.xml" value="0.264" />
+        <entry key="..\:/Users/amand/AndroidStudioProjects/FlosFiore_And/app/src/main/res/layout/activity_flower_list.xml" value="0.2" />
         <entry key="..\:/Users/amand/AndroidStudioProjects/FlosFiore_And/app/src/main/res/layout/activity_main.xml" value="0.24947916666666667" />
         <entry key="..\:/Users/amand/AndroidStudioProjects/FlosFiore_And/app/src/main/res/layout/activity_signup.xml" value="0.23369565217391305" />
         <entry key="..\:/Users/amand/AndroidStudioProjects/FlosFiore_And/app/src/main/res/layout/activity_start.xml" value="0.264" />
+        <entry key="..\:/Users/amand/AndroidStudioProjects/FlosFiore_And/app/src/main/res/layout/fragment_cart.xml" value="0.12132725430597771" />
         <entry key="..\:/Users/amand/AndroidStudioProjects/FlosFiore_And/app/src/main/res/layout/fragment_category.xml" value="0.2484375" />
         <entry key="..\:/Users/amand/AndroidStudioProjects/FlosFiore_And/app/src/main/res/layout/fragment_community.xml" value="0.23369565217391305" />
         <entry key="..\:/Users/amand/AndroidStudioProjects/FlosFiore_And/app/src/main/res/layout/fragment_community_gallery.xml" value="0.23369565217391305" />
         <entry key="..\:/Users/amand/AndroidStudioProjects/FlosFiore_And/app/src/main/res/layout/fragment_community_my_plant.xml" value="0.23369565217391305" />
         <entry key="..\:/Users/amand/AndroidStudioProjects/FlosFiore_And/app/src/main/res/layout/fragment_community_post.xml" value="0.23369565217391305" />
+        <entry key="..\:/Users/amand/AndroidStudioProjects/FlosFiore_And/app/src/main/res/layout/fragment_flower_list.xml" value="0.264" />
         <entry key="..\:/Users/amand/AndroidStudioProjects/FlosFiore_And/app/src/main/res/layout/fragment_home.xml" value="0.1674825174825175" />
         <entry key="..\:/Users/amand/AndroidStudioProjects/FlosFiore_And/app/src/main/res/layout/fragment_login.xml" value="0.152" />
+        <entry key="..\:/Users/amand/AndroidStudioProjects/FlosFiore_And/app/src/main/res/layout/item_comments.xml" value="0.19610507246376813" />
+        <entry key="..\:/Users/amand/AndroidStudioProjects/FlosFiore_And/app/src/main/res/layout/item_community_comments.xml" value="0.6" />
         <entry key="..\:/Users/amand/AndroidStudioProjects/FlosFiore_And/app/src/main/res/layout/item_community_gallery.xml" value="0.2" />
         <entry key="..\:/Users/amand/AndroidStudioProjects/FlosFiore_And/app/src/main/res/layout/item_community_post.xml" value="0.4" />
+        <entry key="..\:/Users/amand/AndroidStudioProjects/FlosFiore_And/app/src/main/res/layout/item_community_re_comments.xml" value="0.264" />
         <entry key="..\:/Users/amand/AndroidStudioProjects/FlosFiore_And/app/src/main/res/layout/item_flower_detail.xml" value="0.1793478260869565" />
+        <entry key="..\:/Users/amand/AndroidStudioProjects/FlosFiore_And/app/src/main/res/layout/item_flower_list.xml" value="0.2" />
         <entry key="..\:/Users/amand/AndroidStudioProjects/FlosFiore_And/app/src/main/res/layout/item_home_best10.xml" value="0.264" />
         <entry key="..\:/Users/amand/AndroidStudioProjects/FlosFiore_And/app/src/main/res/layout/item_home_flower.xml" value="0.24947916666666667" />
         <entry key="..\:/Users/amand/AndroidStudioProjects/FlosFiore_And/app/src/main/res/layout/item_home_mybest.xml" value="0.24947916666666667" />
         <entry key="..\:/Users/amand/AndroidStudioProjects/FlosFiore_And/app/src/main/res/layout/item_home_sale.xml" value="0.23369565217391305" />
+        <entry key="..\:/Users/amand/AndroidStudioProjects/FlosFiore_And/app/src/main/res/layout/item_rv_community_comments_.xml" value="0.19610507246376813" />
         <entry key="..\:/Users/amand/AndroidStudioProjects/FlosFiore_And/app/src/main/res/menu/bottom_menu.xml" value="0.24947916666666667" />
       </map>
     </option>

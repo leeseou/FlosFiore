@@ -1,4 +1,4 @@
-package com.example.flosfiore
+package com.example.flosfiore.ui.main.cart
 
 import android.app.Application
 import android.os.Bundle

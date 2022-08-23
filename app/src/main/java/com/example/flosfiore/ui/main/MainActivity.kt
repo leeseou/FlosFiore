@@ -1,10 +1,15 @@
-package com.example.flosfiore
+package com.example.flosfiore.ui.main
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
+import com.example.flosfiore.ui.main.cart.CartFragment
+import com.example.flosfiore.ui.main.map.MapFragment
+import com.example.flosfiore.ui.main.mypage.MypageFragment
+import com.example.flosfiore.R
 import com.example.flosfiore.databinding.ActivityMainBinding
 import com.example.flosfiore.ui.main.community.CommunityFragment
+import com.example.flosfiore.ui.main.home.HomeFragment
 
 class MainActivity : AppCompatActivity() {
 

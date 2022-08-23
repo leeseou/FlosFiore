@@ -1,14 +1,12 @@
 package com.example.flosfiore.ui.main.community
 
-import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import com.example.flosfiore.HomeCategoryVPAdapter
-import com.example.flosfiore.MainActivity
+import com.example.flosfiore.ui.main.MainActivity
 import com.example.flosfiore.databinding.FragmentCommunityBinding
 import com.google.android.material.tabs.TabLayoutMediator
 

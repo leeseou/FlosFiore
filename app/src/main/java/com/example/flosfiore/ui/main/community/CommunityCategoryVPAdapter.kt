@@ -2,7 +2,7 @@ package com.example.flosfiore.ui.main.community
 
 import androidx.fragment.app.Fragment
 import androidx.viewpager2.adapter.FragmentStateAdapter
-import com.example.flosfiore.HomeCategoryFragment
+import com.example.flosfiore.ui.main.home.HomeCategoryFragment
 
 class CommunityCategoryVPAdapter(fragment : Fragment) : FragmentStateAdapter(fragment) {
     override fun getItemCount(): Int = 5

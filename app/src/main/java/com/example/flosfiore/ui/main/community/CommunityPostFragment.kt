@@ -10,7 +10,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.flosfiore.R
 import com.example.flosfiore.data.entities.Post
 import com.example.flosfiore.databinding.FragmentCommunityPostBinding
-import com.example.flosfiore.ui.start.StartActivity
+import com.example.flosfiore.ui.main.community.detail.CommunityDetailActivity
 
 class CommunityPostFragment: Fragment() {
     lateinit var binding: FragmentCommunityPostBinding

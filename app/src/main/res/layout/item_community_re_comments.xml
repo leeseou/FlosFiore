@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/item_community_comments_profile_civ"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:src="@drawable/ic_launcher_background"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+    <TextView
+        android:id="@+id/item_community_comments_writer_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="-10dp"
+        android:layout_marginStart="5dp"
+        android:paddingTop="-3dp"
+        android:text="모긴"
+        android:textSize="12sp"
+        android:textColor="@color/black"
+        android:fontFamily="@font/notosanscjkkr_bold"
+        app:layout_constraintTop_toTopOf="@id/item_community_comments_profile_civ"
+        app:layout_constraintStart_toEndOf="@id/item_community_comments_profile_civ"/>
+
+    <TextView
+        android:id="@+id/item_community_comments_time_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="-15dp"
+        android:text="5분 전"
+        android:textSize="10sp"
+        android:fontFamily="@font/notosanscjkkr_regular"
+        app:layout_constraintBottom_toBottomOf="@id/item_community_comments_profile_civ"
+        app:layout_constraintStart_toStartOf="@id/item_community_comments_writer_tv"/>
+
+    <TextView
+        android:id="@+id/item_community_comments_user_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="\@조이"
+        android:textSize="12sp"
+        android:textColor="@color/main_green1"
+        android:fontFamily="@font/notosanscjkkr_regular"
+        app:layout_constraintTop_toBottomOf="@id/item_community_comments_time_tv"
+        app:layout_constraintStart_toStartOf="@id/item_community_comments_time_tv"/>
+
+    <TextView
+        android:id="@+id/item_community_comments_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:text="수염틸란드시아는 고양이와 함께 키워도 좋습니다."
+        android:textSize="12sp"
+        android:textColor="@color/black"
+        android:fontFamily="@font/notosanscjkkr_regular"
+        app:layout_constraintTop_toBottomOf="@id/item_community_comments_time_tv"
+        app:layout_constraintStart_toEndOf="@id/item_community_comments_user_tv"/>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingBottom="20dp"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        app:layout_constraintTop_toBottomOf="@id/item_community_comments_user_tv"
+        app:layout_constraintStart_toStartOf="@id/item_community_comments_user_tv">
+
+        <ImageView
+            android:layout_width="10.94dp"
+            android:layout_height="10dp"
+            android:src="@drawable/ic_community_like"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:text="좋아요"
+            android:textSize="10sp"
+            android:fontFamily="@font/notosanscjkkr_regular"/>
+
+        <View
+            android:layout_width="1dp"
+            android:layout_height="8dp"
+            android:layout_marginHorizontal="9dp"
+            android:background="#A1A1A1"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:text="답글달기"
+            android:textSize="10sp"
+            android:fontFamily="@font/notosanscjkkr_regular"/>
+
+        <View
+            android:layout_width="1dp"
+            android:layout_height="8dp"
+            android:layout_marginHorizontal="9dp"
+            android:background="#A1A1A1"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:text="신고"
+            android:textSize="10sp"
+            android:fontFamily="@font/notosanscjkkr_regular"/>
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
