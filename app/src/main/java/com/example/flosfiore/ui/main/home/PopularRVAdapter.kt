@@ -9,14 +9,14 @@ import com.example.flosfiore.databinding.ItemHomePopularBinding
 class PopularRVAdapter (private val datalist : ArrayList<Store>) :
         RecyclerView.Adapter<PopularRVAdapter.ViewHolder>() {
 
-        interface MyItemClickListener{
-            fun onItemClick(store: Store)
-        }
-
-        private lateinit var mItemClickListener : MyItemClickListener
-        fun setMyItemClickListener (itemClickListener: MyItemClickListener) {
-            mItemClickListener = itemClickListener
-        }
+//        interface MyItemClickListener{
+//            fun onItemClick(store: Store)
+//        }
+//
+//        private lateinit var mItemClickListener : MyItemClickListener
+//        fun setMyItemClickListener (itemClickListener: MyItemClickListener) {
+//            mItemClickListener = itemClickListener
+//        }
 
         fun addItem(store: Store) {
             datalist.add(store)
@@ -36,7 +36,7 @@ class PopularRVAdapter (private val datalist : ArrayList<Store>) :
 
         override fun onBindViewHolder(holder: ViewHolder, position: Int) {
             holder.bind(datalist[position])
-            holder.itemView.setOnClickListener { mItemClickListener.onItemClick(datalist[position])}
+//            holder.itemView.setOnClickListener { mItemClickListener.onItemClick(datalist[position])}
 
         }
 

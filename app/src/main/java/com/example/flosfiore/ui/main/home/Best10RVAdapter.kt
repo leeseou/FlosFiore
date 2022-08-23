@@ -5,6 +5,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.flosfiore.data.entities.Flower
 import com.example.flosfiore.databinding.ItemHomeBest10Binding
+import java.text.DecimalFormat
 
 class Best10RVAdapter (private val datalist : ArrayList<Flower>) :
         RecyclerView.Adapter<Best10RVAdapter.ViewHolder>() {
@@ -43,9 +44,10 @@ class Best10RVAdapter (private val datalist : ArrayList<Flower>) :
         override fun getItemCount(): Int = datalist.size
 
         inner class ViewHolder(val binding : ItemHomeBest10Binding) : RecyclerView.ViewHolder(binding.root) {
+            val dec = DecimalFormat("#,###")
             fun bind(flower: Flower) {
                 binding.itemHomeMainIv.setImageResource(flower.img!!)
-                binding.itemHomePriceTv.text = flower.price.toString()
+                binding.itemHomePriceTv.text = dec.format(flower.price)
                 binding.itemHomeNameTv.text = "[" + flower.store + "] " + flower.name
             }
         }

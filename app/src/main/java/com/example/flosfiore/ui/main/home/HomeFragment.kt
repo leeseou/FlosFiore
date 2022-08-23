@@ -39,6 +39,8 @@ class HomeFragment : Fragment() {
     )
 
     private var flowerListRVAdapter = FlowerListRVAdapter(flowerList, 4)
+    lateinit var best10Adapter: Best10RVAdapter
+    lateinit var saleAdapter: SaleRVAdapter
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -56,6 +58,7 @@ class HomeFragment : Fragment() {
         }.attach()
 
         setRVAdapters()
+        setRVClickListeners()
 
         binding.homeLocationTv.setOnClickListener {
             startActivity(Intent(requireContext(), FlowerDetailActivity::class.java))
@@ -122,11 +125,11 @@ class HomeFragment : Fragment() {
                 "유럽에서는 가정이나 사무실 등에서 식물을 인테리어로 활용하는 플랜테리어(Plant+Interior)가 여전히 큰 인기를...", 52)
         )
 
-        var best10Adapter = Best10RVAdapter(best10List)
+        best10Adapter = Best10RVAdapter(best10List)
         binding.homeBest10Rv.adapter = best10Adapter
         binding.homeUniqueRv.adapter = best10Adapter
 
-        var  saleAdapter = SaleRVAdapter(saleList)
+        saleAdapter = SaleRVAdapter(saleList)
         binding.homeSaleRv.adapter = saleAdapter
 
         var popularAdapter = PopularRVAdapter(popularList)
@@ -140,6 +143,35 @@ class HomeFragment : Fragment() {
 
         var instaAdapter = InstagramRVAdapter(instagramList)
         binding.homeInstaRv.adapter = instaAdapter
+    }
+
+    fun setRVClickListeners() {
+        flowerListRVAdapter.setMyItemClickListener(object :
+            FlowerListRVAdapter.MyItemClickListener {
+            override fun onItemClick(flower: Flower) {
+                var intent = Intent(requireContext(), FlowerDetailActivity::class.java)
+                intent.putExtra("flower", flower)
+                startActivity(intent)
+            }
+        })
+
+        best10Adapter.setMyItemClickListener(object :
+            Best10RVAdapter.MyItemClickListener {
+            override fun onItemClick(flower: Flower) {
+                var intent = Intent(requireContext(), FlowerDetailActivity::class.java)
+                intent.putExtra("flower", flower)
+                startActivity(intent)
+            }
+        })
+
+        saleAdapter.setMyItemClickListener(object :
+            SaleRVAdapter.MyItemClickListener {
+            override fun onItemClick(flower: Flower) {
+                var intent = Intent(requireContext(), FlowerDetailActivity::class.java)
+                intent.putExtra("flower", flower)
+                startActivity(intent)
+            }
+        })
     }
 
     inner class CustomPagerAdapter : RecyclerView.Adapter<CustomPagerAdapter.MyPagerViewHolder>() {
