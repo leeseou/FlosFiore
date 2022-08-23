@@ -18,20 +18,24 @@ import java.text.DecimalFormat
 // 싯가 프레그먼트
 class PriceActivity : AppCompatActivity(), HydraView, LisianView, MistView, RoseView {
     lateinit var binding: ActivityPriceBinding
-    // 꽃 가격
-    var flowers = arrayListOf(
-        Item("22.08.01","플로레 화원", 7500, setImage(7500, 7500)),
-        Item("22.08.01","꽃집 청년들", 7900, setImage(7900, 7500)),
-        Item("22.08.01","플로레 화원", 7500, setImage(7500, 7500)),
-        Item("22.08.02","플로레 화원", 7500, setImage(7500, 7500)),
-        Item("22.08.02","꽃집 청년들", 7900, setImage(7900, 7500)),
-        Item("22.08.02","플로레 화원", 7500, setImage(7500, 7500)),
-        Item("22.08.03","플로레 화원", 7500, setImage(7500, 7500)),
-        Item("22.08.03","꽃집 청년들", 7900, setImage(7900, 7500)),
-        Item("22.08.03","플로레 화원", 7500, setImage(7500, 7500))
-    )
 
     private var context = this
+
+    // 꽃 가격
+    var flowers = arrayListOf(
+        Item("22.08.01","플로레 화원", 13500, setImage(13500, 14300)),
+        Item("22.08.01","꽃집 청년들", 16000, setImage(16000, 14300)),
+        Item("22.08.01","플로레 화원", 17000, setImage(17000, 14300)),
+        Item("22.08.02","플로레 화원", 12300, setImage(12300, 14300)),
+        Item("22.08.02","꽃집 청년들", 14200, setImage(14200, 14300)),
+        Item("22.08.02","플로레 화원", 13000, setImage(13000, 14300)),
+        Item("22.08.03","플로레 화원", 16600, setImage(16600, 14300)),
+        Item("22.08.03","꽃집 청년들", 18900, setImage(18900, 14300)),
+        Item("22.08.03","플로레 화원", 11000, setImage(11000, 14300)),
+        Item("22.08.03","플로레 화원", 10500, setImage(10500, 14300))
+    )
+
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         binding = ActivityPriceBinding.inflate(layoutInflater)
@@ -57,6 +61,7 @@ class PriceActivity : AppCompatActivity(), HydraView, LisianView, MistView, Rose
     override fun onStart() {
         super.onStart()
         getRose()
+
     }
 
 
