@@ -1,16 +1,12 @@
 package com.example.flosfiore.ui.main.cart
 
-import android.app.Application
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.flosfiore.GoodsNormalRVAdapter
-import com.example.flosfiore.GoodsOvernightRVAdapter
 import com.example.flosfiore.R
 import com.example.flosfiore.data.entities.Flower
 import com.example.flosfiore.data.entities.GoodsNormal
@@ -38,7 +34,7 @@ class CartFragment : Fragment() {
         (activity as MainActivity).setSupportActionBar(binding.cartToolbarTb)
         (activity as MainActivity).supportActionBar?.setDisplayShowTitleEnabled(false)
         (activity as MainActivity).supportActionBar?.setDisplayHomeAsUpEnabled(true)
-        (activity as MainActivity).supportActionBar?.setHomeAsUpIndicator(R.drawable.ic_back_black)
+        (activity as MainActivity).supportActionBar?.setHomeAsUpIndicator(R.drawable.ic_toolbar_back)
 
         // 당일 배송 리사이클러뷰
         // 꽃 가격

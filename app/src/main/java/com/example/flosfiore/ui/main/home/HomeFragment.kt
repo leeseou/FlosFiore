@@ -17,6 +17,7 @@ import com.example.flosfiore.databinding.FragmentHomeBinding
 import com.example.flosfiore.ui.flower.FlowerDetailActivity
 import com.example.flosfiore.ui.flower.FlowerListActivity
 import com.example.flosfiore.ui.flower.FlowerListRVAdapter
+import com.example.flosfiore.ui.search.SearchActivity
 import com.google.android.material.tabs.TabLayoutMediator
 
 // 홈 프레그먼트
@@ -66,6 +67,10 @@ class HomeFragment : Fragment() {
 
         binding.homeViewAllBtn.setOnClickListener {
             startActivity(Intent(requireContext(), FlowerListActivity::class.java))
+        }
+
+        binding.homeSearchLlayout.setOnClickListener {
+            startActivity(Intent(requireContext(), SearchActivity::class.java))
         }
 
         flowerListRVAdapter.setMyItemClickListener(object :

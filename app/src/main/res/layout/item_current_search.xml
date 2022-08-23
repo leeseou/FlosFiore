@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="24dp"
+    android:layout_marginEnd="8dp"
+    android:paddingVertical="3dp"
+    android:paddingHorizontal="10dp"
+    android:gravity="center_vertical"
+    android:background="@drawable/search_current_border">
+
+    <TextView
+        android:id="@+id/item_current_search_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="-6dp"
+        android:text="최근 검색어"
+        android:textSize="11sp"
+        android:textColor="@color/main_gray1"
+        android:fontFamily="@font/notosanscjkkr_regular"/>
+
+    <ImageView
+        android:id="@+id/item_current_search_delete_iv"
+        android:layout_width="10dp"
+        android:layout_height="10dp"
+        android:layout_marginStart="5dp"
+        android:src="@drawable/ic_search_delete"/>
+
+</LinearLayout>

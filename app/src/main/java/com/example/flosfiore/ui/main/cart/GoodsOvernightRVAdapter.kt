@@ -1,10 +1,10 @@
-package com.example.flosfiore
+package com.example.flosfiore.ui.main.cart
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.example.flosfiore.R
 import com.example.flosfiore.data.entities.GoodsOvernight
-import com.example.flosfiore.databinding.FragmentCartBinding
 import com.example.flosfiore.databinding.ItemCartOvernightGoodsBinding
 
 class GoodsOvernightRVAdapter(private val goodsOvernightList: ArrayList<GoodsOvernight>) : RecyclerView.Adapter<GoodsOvernightRVAdapter.ViewHolder>() {
@@ -103,7 +103,7 @@ class GoodsOvernightRVAdapter(private val goodsOvernightList: ArrayList<GoodsOve
         }
     }
 
-    override fun onCreateViewHolder(viewGroup: ViewGroup, viewType: Int): GoodsOvernightRVAdapter.ViewHolder {
+    override fun onCreateViewHolder(viewGroup: ViewGroup, viewType: Int): ViewHolder {
         val binding : ItemCartOvernightGoodsBinding = ItemCartOvernightGoodsBinding.inflate(
             LayoutInflater.from(viewGroup.context),viewGroup,false)
 

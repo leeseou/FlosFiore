@@ -22,7 +22,7 @@ class MypageFragment : Fragment() {
         (activity as MainActivity).setSupportActionBar(binding.mypageToolbarTb)
         (activity as MainActivity).supportActionBar?.setDisplayShowTitleEnabled(false)
         (activity as MainActivity).supportActionBar?.setDisplayHomeAsUpEnabled(true)
-        (activity as MainActivity).supportActionBar?.setHomeAsUpIndicator(R.drawable.ic_back_black)
+        (activity as MainActivity).supportActionBar?.setHomeAsUpIndicator(R.drawable.ic_toolbar_back)
 
         return binding.root
     }

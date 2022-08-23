@@ -36,6 +36,6 @@ class CommunityWriteActivity: AppCompatActivity() {
         setSupportActionBar(binding.communityWriteToolbarTb)
         supportActionBar?.setDisplayShowTitleEnabled(false)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
-        supportActionBar?.setHomeAsUpIndicator(R.drawable.ic_back_black)
+        supportActionBar?.setHomeAsUpIndicator(R.drawable.ic_toolbar_back)
     }
 }

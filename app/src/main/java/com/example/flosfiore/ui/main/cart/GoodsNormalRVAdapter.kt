@@ -1,8 +1,9 @@
-package com.example.flosfiore
+package com.example.flosfiore.ui.main.cart
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.example.flosfiore.R
 import com.example.flosfiore.data.entities.GoodsNormal
 import com.example.flosfiore.databinding.ItemCartNormalGoodsBinding
 
@@ -107,7 +108,7 @@ class GoodsNormalRVAdapter(private val goodsNormalList: ArrayList<GoodsNormal>) 
     }
 
 
-    override fun onCreateViewHolder(viewGroup: ViewGroup, viewType: Int): GoodsNormalRVAdapter.ViewHolder {
+    override fun onCreateViewHolder(viewGroup: ViewGroup, viewType: Int): ViewHolder {
         val binding : ItemCartNormalGoodsBinding = ItemCartNormalGoodsBinding.inflate(
             LayoutInflater.from(viewGroup.context),viewGroup,false)
 

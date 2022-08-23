@@ -35,7 +35,7 @@ class CommunityFragment : Fragment() {
         (activity as MainActivity).setSupportActionBar(binding.communityToolbarTb)
         (activity as MainActivity).supportActionBar?.setDisplayShowTitleEnabled(false)
         (activity as MainActivity).supportActionBar?.setDisplayHomeAsUpEnabled(true)
-        (activity as MainActivity).supportActionBar?.setHomeAsUpIndicator(R.drawable.ic_back_black)
+        (activity as MainActivity).supportActionBar?.setHomeAsUpIndicator(R.drawable.ic_toolbar_back)
 
         binding.communityWriteCiv.setOnClickListener {
             startActivity(Intent(requireContext(), CommunityWriteActivity::class.java))
