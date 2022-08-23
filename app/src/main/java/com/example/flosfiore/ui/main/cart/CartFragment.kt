@@ -2,6 +2,7 @@ package com.example.flosfiore.ui.main.cart
 
 import android.app.Application
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -20,6 +21,10 @@ import com.example.flosfiore.ui.main.MainActivity
 class CartFragment : Fragment() {
 
     lateinit var binding: FragmentCartBinding
+    var goodsOvernight = arrayListOf(GoodsOvernight())
+    var goodsNormal = arrayListOf(GoodsNormal())
+    lateinit var goodsOvernightAdapter : GoodsOvernightRVAdapter
+    lateinit var goodsNormalAdapter : GoodsNormalRVAdapter
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -34,80 +39,99 @@ class CartFragment : Fragment() {
 
         // 당일 배송 리사이클러뷰
         // 꽃 가격
-        var goodsOvernight = arrayListOf(
+        goodsOvernight = arrayListOf(
             GoodsOvernight(R.drawable.ic_cart_select, R.drawable.img_flower_detail1,"플로레 화원","가든 꽃바구니", "핑크&옐로우",1, 83000, 83000),
             GoodsOvernight(R.drawable.ic_cart_select, R.drawable.img_flower_detail2,"플로레 화원","가든 꽃바구니", "핑크&옐로우",1, 67000, 67000)
         )
 
-        // 리사이클러뷰 구분선
-        val decoration = DividerItemDecoration(context, 1)
-        binding.cartOvernightGoodsRv.addItemDecoration(decoration)
-
-
-        // 어뎁터 연결
-        var goodsOvernightAdapter = GoodsOvernightRVAdapter(goodsOvernight)
-        binding.cartOvernightGoodsRv.adapter = goodsOvernightAdapter
-        binding.cartOvernightGoodsRv.layoutManager = LinearLayoutManager(context, LinearLayoutManager.VERTICAL,false)
-
-
         // 일반배송 리사이클러뷰
         // 꽃 가격
-        var goodsNormal = arrayListOf(
+        goodsNormal = arrayListOf(
             GoodsNormal(R.drawable.ic_cart_select, R.drawable.img_flower_detail3,"플로레 화원","가든 꽃바구니", "핑크",1, 51000, 51000),
             GoodsNormal(R.drawable.ic_cart_select, R.drawable.img_home_sale2,"플로레 화원","가든 꽃바구니", "옐로우",1, 32000, 32000)
         )
 
+        setRVAdapter()
+        updateViews()
+        setRVOnClickListener()
+
+
+        binding.cartAllSelectIv.setOnClickListener {
+            binding.cartAllSelectIv.visibility = View.GONE
+            binding.cartAllNotSelectIv.visibility = View.VISIBLE
+            goodsOvernightAdapter.setCheckAll(false)
+            goodsNormalAdapter.setCheckAll(false)
+            updateViews()
+        }
+
+        binding.cartAllNotSelectIv.setOnClickListener {
+            binding.cartAllSelectIv.visibility = View.VISIBLE
+            binding.cartAllNotSelectIv.visibility = View.GONE
+            goodsOvernightAdapter.setCheckAll(true)
+            goodsNormalAdapter.setCheckAll(true)
+            updateViews()
+        }
+
+        binding.cartSelectDeleteTv.setOnClickListener {
+            goodsNormalAdapter.removeSelected()
+            goodsOvernightAdapter.removeSelected()
+            updateViews()
+        }
+
+        return binding.root
+    }
+
+    private fun updateViews() {
+        binding.cartPaymentGoodsCountTv.text = "총 ${goodsOvernightAdapter.countGoods() + goodsNormalAdapter.countGoods()}개"
+        binding.cartTotalCountTv.text = "총 ${goodsOvernightAdapter.countGoods() + goodsNormalAdapter.countGoods()}개   |"
+        binding.cartPaymentGoodsPriceTv.text = "${goodsOvernightAdapter.sumPrice() + goodsNormalAdapter.sumPrice()}원"
+        binding.cartPaymentPriceTv.text = "${goodsOvernightAdapter.sumPrice() + goodsNormalAdapter.sumPrice()}원"
+        binding.cartTotalPriceTv.text = "${goodsOvernightAdapter.sumPrice() + goodsNormalAdapter.sumPrice()}원 결제하기"
+    }
+
+    private fun setRVAdapter() {
         // 리사이클러뷰 구분선
+        val decoration = DividerItemDecoration(context, 1)
+        binding.cartOvernightGoodsRv.addItemDecoration(decoration)
         binding.cartNormalGoodsRv.addItemDecoration(decoration)
 
 
-        // 어뎁터 연결
-        var goodsNormalAdapter = GoodsNormalRVAdapter(goodsNormal)
+        // 당일 배송 어뎁터 연결
+        goodsOvernightAdapter = GoodsOvernightRVAdapter(goodsOvernight)
+        binding.cartOvernightGoodsRv.adapter = goodsOvernightAdapter
+        binding.cartOvernightGoodsRv.layoutManager = LinearLayoutManager(context, LinearLayoutManager.VERTICAL,false)
+
+        // 일반 배송 어뎁터 연결
+        goodsNormalAdapter = GoodsNormalRVAdapter(goodsNormal)
         binding.cartNormalGoodsRv.adapter = goodsNormalAdapter
         binding.cartNormalGoodsRv.layoutManager = LinearLayoutManager(context, LinearLayoutManager.VERTICAL,false)
+    }
 
-
-
+    private fun setRVOnClickListener() {
         // 당일 배송 클릭 이벤트
         goodsOvernightAdapter.setMyItemClickListener(object: GoodsOvernightRVAdapter.MyItemClickListener{
             override fun onItemClick() {
-            
+
             }
 
             override fun onRemoveGoodsOvernight(position: Int) {
                 goodsOvernightAdapter.removeGoods(position)
-                binding.cartPaymentGoodsCountTv.text = "총 ${goodsOvernightAdapter.countGoods() + goodsNormalAdapter.countGoods()}개"
-                binding.cartTotalCountTv.text = "총 ${goodsOvernightAdapter.countGoods() + goodsNormalAdapter.countGoods()}개   |"
-                binding.cartPaymentGoodsPriceTv.text = "${goodsOvernightAdapter.sumPrice() + goodsNormalAdapter.sumPrice()}원"
-                binding.cartPaymentPriceTv.text = "${goodsOvernightAdapter.sumPrice() + goodsNormalAdapter.sumPrice()}원"
-                binding.cartTotalPriceTv.text = "${goodsOvernightAdapter.sumPrice() + goodsNormalAdapter.sumPrice()}원 결제하기"
+                updateViews()
             }
 
             override fun onDownBtnClick(goodsOvernight: GoodsOvernight) {
                 goodsOvernightAdapter.abstractNum(goodsOvernight)
-                binding.cartPaymentGoodsCountTv.text = "총 ${goodsOvernightAdapter.countGoods() + goodsNormalAdapter.countGoods()}개"
-                binding.cartTotalCountTv.text = "총 ${goodsOvernightAdapter.countGoods() + goodsNormalAdapter.countGoods()}개   |"
-                binding.cartPaymentGoodsPriceTv.text = "${goodsOvernightAdapter.sumPrice() + goodsNormalAdapter.sumPrice()}원"
-                binding.cartPaymentPriceTv.text = "${goodsOvernightAdapter.sumPrice() + goodsNormalAdapter.sumPrice()}원"
-                binding.cartTotalPriceTv.text = "${goodsOvernightAdapter.sumPrice() + goodsNormalAdapter.sumPrice()}원 결제하기"
+                updateViews()
             }
 
             override fun onUpBtnClick(goodsOvernight: GoodsOvernight) {
                 goodsOvernightAdapter.addNum(goodsOvernight)
-                binding.cartPaymentGoodsCountTv.text = "총 ${goodsOvernightAdapter.countGoods() + goodsNormalAdapter.countGoods()}개"
-                binding.cartTotalCountTv.text = "총 ${goodsOvernightAdapter.countGoods() + goodsNormalAdapter.countGoods()}개   |"
-                binding.cartPaymentGoodsPriceTv.text = "${goodsOvernightAdapter.sumPrice() + goodsNormalAdapter.sumPrice()}원"
-                binding.cartPaymentPriceTv.text = "${goodsOvernightAdapter.sumPrice() + goodsNormalAdapter.sumPrice()}원"
-                binding.cartTotalPriceTv.text = "${goodsOvernightAdapter.sumPrice() + goodsNormalAdapter.sumPrice()}원 결제하기"
+                updateViews()
             }
 
             override fun onSelectClick(goodsOvernight: GoodsOvernight) {
                 goodsOvernightAdapter.selectGoods(goodsOvernight)
-                binding.cartPaymentGoodsCountTv.text = "총 ${goodsOvernightAdapter.countGoods() + goodsNormalAdapter.countGoods()}개"
-                binding.cartTotalCountTv.text = "총 ${goodsOvernightAdapter.countGoods() + goodsNormalAdapter.countGoods()}개   |"
-                binding.cartPaymentGoodsPriceTv.text = "${goodsOvernightAdapter.sumPrice() + goodsNormalAdapter.sumPrice()}원"
-                binding.cartPaymentPriceTv.text = "${goodsOvernightAdapter.sumPrice() + goodsNormalAdapter.sumPrice()}원"
-                binding.cartTotalPriceTv.text = "${goodsOvernightAdapter.sumPrice() + goodsNormalAdapter.sumPrice()}원 결제하기"
+                updateViews()
                 if(goodsOvernightAdapter.countSelect()&&goodsNormalAdapter.countSelect()){
                     binding.cartAllSelectIv.visibility = View.VISIBLE
                     binding.cartAllNotSelectIv.visibility = View.GONE
@@ -129,38 +153,22 @@ class CartFragment : Fragment() {
 
             override fun onRemoveGoodsNormal(position: Int) {
                 goodsNormalAdapter.removeGoods(position)
-                binding.cartPaymentGoodsCountTv.text = "총 ${goodsOvernightAdapter.countGoods() + goodsNormalAdapter.countGoods()}개"
-                binding.cartTotalCountTv.text = "총 ${goodsOvernightAdapter.countGoods() + goodsNormalAdapter.countGoods()}개   |"
-                binding.cartPaymentGoodsPriceTv.text = "${goodsOvernightAdapter.sumPrice() + goodsNormalAdapter.sumPrice()}원"
-                binding.cartPaymentPriceTv.text = "${goodsOvernightAdapter.sumPrice() + goodsNormalAdapter.sumPrice()}원"
-                binding.cartTotalPriceTv.text = "${goodsOvernightAdapter.sumPrice() + goodsNormalAdapter.sumPrice()}원 결제하기"
+                updateViews()
             }
 
             override fun onDownBtnClick(goodsNormal: GoodsNormal) {
                 goodsNormalAdapter.abstractNum(goodsNormal)
-                binding.cartPaymentGoodsCountTv.text = "총 ${goodsOvernightAdapter.countGoods() + goodsNormalAdapter.countGoods()}개"
-                binding.cartTotalCountTv.text = "총 ${goodsOvernightAdapter.countGoods() + goodsNormalAdapter.countGoods()}개   |"
-                binding.cartPaymentGoodsPriceTv.text = "${goodsOvernightAdapter.sumPrice() + goodsNormalAdapter.sumPrice()}원"
-                binding.cartPaymentPriceTv.text = "${goodsOvernightAdapter.sumPrice() + goodsNormalAdapter.sumPrice()}원"
-                binding.cartTotalPriceTv.text = "${goodsOvernightAdapter.sumPrice() + goodsNormalAdapter.sumPrice()}원 결제하기"
+                updateViews()
             }
 
             override fun onUpBtnClick(goodsNormal: GoodsNormal) {
                 goodsNormalAdapter.addNum(goodsNormal)
-                binding.cartPaymentGoodsCountTv.text = "총 ${goodsOvernightAdapter.countGoods() + goodsNormalAdapter.countGoods()}개"
-                binding.cartTotalCountTv.text = "총 ${goodsOvernightAdapter.countGoods() + goodsNormalAdapter.countGoods()}개   |"
-                binding.cartPaymentGoodsPriceTv.text = "${goodsOvernightAdapter.sumPrice() + goodsNormalAdapter.sumPrice()}원"
-                binding.cartPaymentPriceTv.text = "${goodsOvernightAdapter.sumPrice() + goodsNormalAdapter.sumPrice()}원"
-                binding.cartTotalPriceTv.text = "${goodsOvernightAdapter.sumPrice() + goodsNormalAdapter.sumPrice()}원 결제하기"
+                updateViews()
             }
 
             override fun onSelectClick(goodsNormal: GoodsNormal) {
                 goodsNormalAdapter.selectGoods(goodsNormal)
-                binding.cartPaymentGoodsCountTv.text = "총 ${goodsOvernightAdapter.countGoods() + goodsNormalAdapter.countGoods()}개"
-                binding.cartTotalCountTv.text = "총 ${goodsOvernightAdapter.countGoods() + goodsNormalAdapter.countGoods()}개   |"
-                binding.cartPaymentGoodsPriceTv.text = "${goodsOvernightAdapter.sumPrice() + goodsNormalAdapter.sumPrice()}원"
-                binding.cartPaymentPriceTv.text = "${goodsOvernightAdapter.sumPrice() + goodsNormalAdapter.sumPrice()}원"
-                binding.cartTotalPriceTv.text = "${goodsOvernightAdapter.sumPrice() + goodsNormalAdapter.sumPrice()}원 결제하기"
+                updateViews()
                 if(goodsOvernightAdapter.countSelect()&&goodsNormalAdapter.countSelect()){
                     binding.cartAllSelectIv.visibility = View.VISIBLE
                     binding.cartAllNotSelectIv.visibility = View.GONE
@@ -171,30 +179,6 @@ class CartFragment : Fragment() {
                 }
             }
         })
-
-
-        binding.cartAllSelectIv.setOnClickListener {
-            binding.cartAllSelectIv.visibility = View.GONE
-            binding.cartAllNotSelectIv.visibility = View.VISIBLE
-            goodsOvernightAdapter.setCheckAll(false)
-            goodsNormalAdapter.setCheckAll(false)
-        }
-
-        binding.cartAllNotSelectIv.setOnClickListener {
-            binding.cartAllSelectIv.visibility = View.VISIBLE
-            binding.cartAllNotSelectIv.visibility = View.GONE
-            goodsOvernightAdapter.setCheckAll(true)
-            goodsNormalAdapter.setCheckAll(true)
-        }
-
-        binding.cartPaymentGoodsCountTv.text = "총 ${goodsOvernightAdapter.countGoods() + goodsNormalAdapter.countGoods()}개"
-        binding.cartTotalCountTv.text = "총 ${goodsOvernightAdapter.countGoods() + goodsNormalAdapter.countGoods()}개   |"
-        binding.cartPaymentGoodsPriceTv.text = "${goodsOvernightAdapter.sumPrice() + goodsNormalAdapter.sumPrice()}원"
-        binding.cartPaymentPriceTv.text = "${goodsOvernightAdapter.sumPrice() + goodsNormalAdapter.sumPrice()}원"
-        binding.cartTotalPriceTv.text = "${goodsOvernightAdapter.sumPrice() + goodsNormalAdapter.sumPrice()}원 결제하기"
-
-
-        return binding.root
     }
 
 

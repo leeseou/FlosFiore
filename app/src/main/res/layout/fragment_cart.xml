@@ -6,19 +6,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_marginTop="24dp">
 
-<!--    <TextView-->
-<!--        android:id="@+id/cart_title_tv"-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="64dp"-->
-<!--        android:fontFamily="@font/notosanscjkkr_bold"-->
-<!--        android:text="장바구니"-->
-<!--        android:textColor="@color/black"-->
-<!--        android:textSize="18sp"-->
-<!--        app:layout_constraintStart_toStartOf="parent"-->
-<!--        app:layout_constraintEnd_toEndOf="parent"-->
-<!--        app:layout_constraintTop_toTopOf="parent"/>-->
-
-
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/cart_toolbar_tb"
         android:layout_width="0dp"

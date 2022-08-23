@@ -95,6 +95,14 @@ class GoodsOvernightRVAdapter(private val goodsOvernightList: ArrayList<GoodsOve
         return count
     }
 
+    fun removeSelected() {
+        for(i in goodsOvernightList.size - 1 downTo(0)) {
+            if(goodsOvernightList[i].choose) {
+                removeGoods(i)
+            }
+        }
+    }
+
     override fun onCreateViewHolder(viewGroup: ViewGroup, viewType: Int): GoodsOvernightRVAdapter.ViewHolder {
         val binding : ItemCartOvernightGoodsBinding = ItemCartOvernightGoodsBinding.inflate(
             LayoutInflater.from(viewGroup.context),viewGroup,false)
