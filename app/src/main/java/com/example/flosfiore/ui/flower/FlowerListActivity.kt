@@ -19,18 +19,18 @@ class FlowerListActivity: AppCompatActivity() {
         Flower(R.drawable.img_home_tb1, "가든 꽃바구니", 88000, "플로레 화원"),
         Flower(R.drawable.img_home_tb2, "특별한 마음 꽃다발", 88000, "플로레 화원"),
         Flower(R.drawable.img_home_tb3, "분홍장미계절꽃다발", 88000, "플로레 화원"),
-        Flower(R.drawable.img_home_tb4, "특별한 마음 꽃다발발", 88000, "플로레 화원"),
+        Flower(R.drawable.img_home_tb4, "특별한 마음 꽃다발", 88000, "플로레 화원"),
         Flower(R.drawable.img_home_tb1, "가든 꽃바구니", 88000, "플로레 화원"),
         Flower(R.drawable.img_home_tb2, "특별한 마음 꽃다발", 88000, "플로레 화원"),
         Flower(R.drawable.img_home_tb3, "분홍장미계절꽃다발", 88000, "플로레 화원"),
-        Flower(R.drawable.img_home_tb4, "특별한 마음 꽃다발발", 88000, "플로레 화원"),
+        Flower(R.drawable.img_home_tb4, "특별한 마음 꽃다발", 88000, "플로레 화원"),
         Flower(R.drawable.img_home_tb1, "가든 꽃바구니", 88000, "플로레 화원"),
         Flower(R.drawable.img_home_tb2, "특별한 마음 꽃다발", 88000, "플로레 화원"),
         Flower(R.drawable.img_home_tb3, "분홍장미계절꽃다발", 88000, "플로레 화원"),
-        Flower(R.drawable.img_home_tb4, "특별한 마음 꽃다발발", 88000, "플로레 화원")
+        Flower(R.drawable.img_home_tb4, "특별한 마음 꽃다발", 88000, "플로레 화원")
     )
 
-    private var flowerListRVAdapter = FlowerListRVAdapter(flowerList)
+    private var flowerListRVAdapter = FlowerListRVAdapter(flowerList, -1)
     private var context = this
 
     override fun onCreate(savedInstanceState: Bundle?) {

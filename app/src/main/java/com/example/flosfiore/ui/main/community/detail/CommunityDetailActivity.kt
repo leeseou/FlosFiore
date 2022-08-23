@@ -41,6 +41,7 @@ class CommunityDetailActivity: AppCompatActivity() {
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
         var post = intent.getSerializableExtra("post") as Post
+        binding.communityDetailProfileCiv.setImageResource(R.drawable.ic_mypage_profile)
         binding.communityDetailWriterTv.text = post.writer
         binding.communityDetailTitleTv.text = post.title
         binding.communityDetailCommentTv.text = post.comment.toString()

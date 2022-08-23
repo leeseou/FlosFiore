@@ -99,6 +99,14 @@ class GoodsNormalRVAdapter(private val goodsNormalList: ArrayList<GoodsNormal>) 
         return count
     }
 
+    fun removeSelected() {
+        for(i in goodsNormalList.size - 1 downTo(0)) {
+            if(goodsNormalList[i].choose) {
+                removeGoods(i)
+            }
+        }
+    }
+
 
     override fun onCreateViewHolder(viewGroup: ViewGroup, viewType: Int): GoodsNormalRVAdapter.ViewHolder {
         val binding : ItemCartNormalGoodsBinding = ItemCartNormalGoodsBinding.inflate(

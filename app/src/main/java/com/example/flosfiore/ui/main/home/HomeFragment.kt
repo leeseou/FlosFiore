@@ -7,19 +7,40 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.GridLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.example.flosfiore.*
 import com.example.flosfiore.data.entities.Flower
 import com.example.flosfiore.data.entities.Instagram
 import com.example.flosfiore.data.entities.Store
+import com.example.flosfiore.databinding.FragmentFlowerListBinding
 import com.example.flosfiore.databinding.FragmentHomeBinding
 import com.example.flosfiore.ui.flower.FlowerDetailActivity
 import com.example.flosfiore.ui.flower.FlowerListActivity
+import com.example.flosfiore.ui.flower.FlowerListRVAdapter
 import com.google.android.material.tabs.TabLayoutMediator
 
 // 홈 프레그먼트
 class HomeFragment : Fragment() {
     lateinit var binding : FragmentHomeBinding
     private val category = arrayListOf("생화", "야생화/다육이", "동양란", "서양란", "축하화환", "근조화환", "이색상품", "관엽화분")
+    private val flowerList = arrayListOf(
+        Flower(R.drawable.img_home_tb1, "가든 꽃바구니", 88000, "플로레 화원"),
+        Flower(R.drawable.img_home_tb2, "특별한 마음 꽃다발", 88000, "플로레 화원"),
+        Flower(R.drawable.img_home_tb3, "분홍장미계절꽃다발", 88000, "플로레 화원"),
+        Flower(R.drawable.img_home_tb4, "특별한 마음 꽃다발", 88000, "플로레 화원"),
+        Flower(R.drawable.img_home_tb1, "가든 꽃바구니", 88000, "플로레 화원"),
+        Flower(R.drawable.img_home_tb2, "특별한 마음 꽃다발", 88000, "플로레 화원"),
+        Flower(R.drawable.img_home_tb3, "분홍장미계절꽃다발", 88000, "플로레 화원"),
+        Flower(R.drawable.img_home_tb4, "특별한 마음 꽃다발", 88000, "플로레 화원"),
+        Flower(R.drawable.img_home_tb1, "가든 꽃바구니", 88000, "플로레 화원"),
+        Flower(R.drawable.img_home_tb2, "특별한 마음 꽃다발", 88000, "플로레 화원"),
+        Flower(R.drawable.img_home_tb3, "분홍장미계절꽃다발", 88000, "플로레 화원"),
+        Flower(R.drawable.img_home_tb4, "특별한 마음 꽃다발", 88000, "플로레 화원")
+    )
+
+    private var flowerListRVAdapter = FlowerListRVAdapter(flowerList, 4)
+    lateinit var best10Adapter: Best10RVAdapter
+    lateinit var saleAdapter: SaleRVAdapter
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -29,7 +50,7 @@ class HomeFragment : Fragment() {
         binding = FragmentHomeBinding.inflate(inflater, container, false)
 
         //카테고리 탭레이아웃, 뷰페이저 연결
-        val categoryadapter = HomeCategoryVPAdapter(this)
+        val categoryadapter = CustomPagerAdapter()
         binding.homeCategoryVp.adapter = categoryadapter
         TabLayoutMediator(binding.homeCategoryTb, binding.homeCategoryVp) {
                 tab, position ->
@@ -37,6 +58,7 @@ class HomeFragment : Fragment() {
         }.attach()
 
         setRVAdapters()
+        setRVClickListeners()
 
         binding.homeLocationTv.setOnClickListener {
             startActivity(Intent(requireContext(), FlowerDetailActivity::class.java))
@@ -45,6 +67,15 @@ class HomeFragment : Fragment() {
         binding.homeViewAllBtn.setOnClickListener {
             startActivity(Intent(requireContext(), FlowerListActivity::class.java))
         }
+
+        flowerListRVAdapter.setMyItemClickListener(object :
+            FlowerListRVAdapter.MyItemClickListener {
+            override fun onItemClick(flower: Flower) {
+                var intent = Intent(requireContext(), FlowerDetailActivity::class.java)
+                intent.putExtra("flower", flower)
+                startActivity(intent)
+            }
+        })
 
         return binding.root
     }
@@ -94,11 +125,11 @@ class HomeFragment : Fragment() {
                 "유럽에서는 가정이나 사무실 등에서 식물을 인테리어로 활용하는 플랜테리어(Plant+Interior)가 여전히 큰 인기를...", 52)
         )
 
-        var best10Adapter = Best10RVAdapter(best10List)
+        best10Adapter = Best10RVAdapter(best10List)
         binding.homeBest10Rv.adapter = best10Adapter
         binding.homeUniqueRv.adapter = best10Adapter
 
-        var  saleAdapter = SaleRVAdapter(saleList)
+        saleAdapter = SaleRVAdapter(saleList)
         binding.homeSaleRv.adapter = saleAdapter
 
         var popularAdapter = PopularRVAdapter(popularList)
@@ -112,6 +143,58 @@ class HomeFragment : Fragment() {
 
         var instaAdapter = InstagramRVAdapter(instagramList)
         binding.homeInstaRv.adapter = instaAdapter
+    }
+
+    fun setRVClickListeners() {
+        flowerListRVAdapter.setMyItemClickListener(object :
+            FlowerListRVAdapter.MyItemClickListener {
+            override fun onItemClick(flower: Flower) {
+                var intent = Intent(requireContext(), FlowerDetailActivity::class.java)
+                intent.putExtra("flower", flower)
+                startActivity(intent)
+            }
+        })
+
+        best10Adapter.setMyItemClickListener(object :
+            Best10RVAdapter.MyItemClickListener {
+            override fun onItemClick(flower: Flower) {
+                var intent = Intent(requireContext(), FlowerDetailActivity::class.java)
+                intent.putExtra("flower", flower)
+                startActivity(intent)
+            }
+        })
+
+        saleAdapter.setMyItemClickListener(object :
+            SaleRVAdapter.MyItemClickListener {
+            override fun onItemClick(flower: Flower) {
+                var intent = Intent(requireContext(), FlowerDetailActivity::class.java)
+                intent.putExtra("flower", flower)
+                startActivity(intent)
+            }
+        })
+    }
+
+    inner class CustomPagerAdapter : RecyclerView.Adapter<CustomPagerAdapter.MyPagerViewHolder>() {
+        override fun onCreateViewHolder(viewGroup: ViewGroup, viewType: Int): MyPagerViewHolder {
+            val binding2 : FragmentFlowerListBinding = FragmentFlowerListBinding.inflate(LayoutInflater.from(viewGroup.context), viewGroup, false)
+
+            return MyPagerViewHolder(binding2)
+        }
+
+        override fun onBindViewHolder(holder: MyPagerViewHolder, position: Int) {
+            holder.bind(position)
+        }
+
+        override fun getItemCount() = 8
+
+        inner class MyPagerViewHolder(var binding2: FragmentFlowerListBinding) : RecyclerView.ViewHolder(binding2.root) {
+
+            fun bind(position: Int) {
+                binding2.flowerListRv.adapter = flowerListRVAdapter
+            }
+
+        }
+
     }
 
 

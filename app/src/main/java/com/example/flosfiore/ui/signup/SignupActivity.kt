@@ -60,13 +60,25 @@ class SignupActivity: AppCompatActivity(), SignUpView {
             return
         }
 
+        if(binding.signupNameEt.text.toString().isEmpty()) {
+            Toast.makeText(this, "이름을 입력해주세요", Toast.LENGTH_SHORT).show()
+            return
+        }
+
+        if(binding.signupLocationEt.text.toString().isEmpty()) {
+            Toast.makeText(this, "지역을 입력해주세요", Toast.LENGTH_SHORT).show()
+            return
+        }
+
         val email = binding.signupIdEt.text.toString()
         val pwd = binding.signupPwEt.text.toString()
+        val name = binding.signupNameEt.text.toString()
+        val location = binding.signupLocationEt.text.toString()
 
         val authService = AuthService()
         authService.setSignUpView(this)
 
-        authService.signUp(User("", email, "", pwd))
+        authService.signUp(User(name, email, location, pwd))
     }
 
     override fun onSignUpSuccess() {

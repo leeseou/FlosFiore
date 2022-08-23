@@ -6,26 +6,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_marginTop="24dp">
 
-<!--    <TextView-->
-<!--        android:id="@+id/cart_title_tv"-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="64dp"-->
-<!--        android:fontFamily="@font/notosanscjkkr_bold"-->
-<!--        android:text="장바구니"-->
-<!--        android:textColor="@color/black"-->
-<!--        android:textSize="18sp"-->
-<!--        app:layout_constraintStart_toStartOf="parent"-->
-<!--        app:layout_constraintEnd_toEndOf="parent"-->
-<!--        app:layout_constraintTop_toTopOf="parent"/>-->
-
-    <ImageView
-        android:id="@+id/cart_title_tv"
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:src="@drawable/img_home_store2"
-        android:scaleType="centerCrop"
-        app:layout_constraintTop_toTopOf="parent" />
-
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/cart_toolbar_tb"
         android:layout_width="0dp"
@@ -48,6 +28,7 @@
 
 
     <androidx.core.widget.NestedScrollView
+        android:id="@+id/cart_content_nsv"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         app:layout_constraintStart_toStartOf="parent"
@@ -119,6 +100,7 @@
                 android:background="#F1F1F1" />
 
             <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/cart_overnight_delivery_clayout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="16dp">
@@ -167,6 +149,7 @@
                 android:background="#F1F1F1" />
 
             <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/cart_normal_delivery_clayout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="16dp">
@@ -399,6 +382,45 @@
         </LinearLayout>
 
     </androidx.core.widget.NestedScrollView>
+
+    <LinearLayout
+        android:id="@+id/cart_empty_llayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center_horizontal"
+        android:visibility="gone"
+        app:layout_constraintTop_toBottomOf="@id/cart_toolbar_tb"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <ImageView
+            android:layout_width="80dp"
+            android:layout_height="84dp"
+            android:src="@drawable/ic_cart_empty"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="장바구니에 담긴 상품이 없습니다."
+            android:textSize="16sp"
+            android:textColor="#E4E4E4"
+            android:fontFamily="@font/notosanscjkkr_regular"/>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/cart_add_goods_btn"
+            android:layout_width="188dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="28dp"
+            android:text="상품 추가하러 가기"
+            android:textColor="@color/main_green1"
+            android:textSize="14sp"
+            android:fontFamily="@font/notosanscjkkr_regular"
+            android:background="@drawable/home_btn_border"/>
+
+    </LinearLayout>
 
 
 

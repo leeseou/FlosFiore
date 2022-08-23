@@ -50,13 +50,108 @@
         app:layout_constraintTop_toBottomOf="@id/flower_list_toolbar_tb"
         app:layout_constraintStart_toStartOf="parent"/>
 
+    <TextView
+        android:id="@+id/flower_list_total_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="전체"
+        android:textSize="11sp"
+        android:textColor="@color/black"
+        android:fontFamily="@font/notosanscjkkr_regular"
+        app:layout_constraintTop_toBottomOf="@id/flower_list_category_tb"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+    <ImageView
+        android:layout_width="12dp"
+        android:layout_height="6dp"
+        android:layout_marginStart="3dp"
+        android:src="@drawable/ic_home_more_location"
+        app:layout_constraintTop_toTopOf="@id/flower_list_total_tv"
+        app:layout_constraintBottom_toBottomOf="@id/flower_list_total_tv"
+        app:layout_constraintStart_toEndOf="@id/flower_list_total_tv"/>
+
+    <CheckBox
+        android:layout_width="12dp"
+        android:layout_height="12dp"
+        android:layout_marginEnd="5dp"
+        android:background="@drawable/selector_flower_list_checkbox"
+        app:layout_constraintTop_toTopOf="@id/flower_list_filter_tv"
+        app:layout_constraintBottom_toBottomOf="@id/flower_list_filter_tv"
+        app:layout_constraintEnd_toStartOf="@id/flower_list_img_only_tv"/>
+
+    <TextView
+        android:id="@+id/flower_list_img_only_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="12dp"
+        android:text="이미지만 볼래요"
+        android:textSize="11sp"
+        android:textColor="@color/black"
+        android:fontFamily="@font/notosanscjkkr_medium"
+        app:layout_constraintTop_toBottomOf="@id/flower_list_category_tb"
+        app:layout_constraintEnd_toStartOf="@id/flower_list_array_tv"/>
+
+    <TextView
+        android:id="@+id/flower_list_array_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="3dp"
+        android:text="정렬"
+        android:textSize="11sp"
+        android:textColor="@color/black"
+        android:fontFamily="@font/notosanscjkkr_medium"
+        app:layout_constraintTop_toBottomOf="@id/flower_list_category_tb"
+        app:layout_constraintEnd_toStartOf="@id/flower_list_array_iv"/>
+
+    <ImageView
+        android:id="@+id/flower_list_array_iv"
+        android:layout_width="7.87dp"
+        android:layout_height="9dp"
+        android:layout_marginEnd="12dp"
+        android:src="@drawable/ic_flower_list_array"
+        app:layout_constraintTop_toTopOf="@id/flower_list_filter_tv"
+        app:layout_constraintBottom_toBottomOf="@id/flower_list_filter_tv"
+        app:layout_constraintEnd_toStartOf="@id/flower_list_filter_tv"/>
+
+    <TextView
+        android:id="@+id/flower_list_filter_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="3dp"
+        android:text="필터"
+        android:textSize="11sp"
+        android:textColor="@color/black"
+        android:fontFamily="@font/notosanscjkkr_medium"
+        app:layout_constraintTop_toBottomOf="@id/flower_list_category_tb"
+        app:layout_constraintEnd_toStartOf="@id/flower_list_filter_iv"/>
+
+    <ImageView
+        android:id="@+id/flower_list_filter_iv"
+        android:layout_width="8.53dp"
+        android:layout_height="9dp"
+        android:src="@drawable/ic_flower_list_filter"
+        app:layout_constraintTop_toTopOf="@id/flower_list_filter_tv"
+        app:layout_constraintBottom_toBottomOf="@id/flower_list_filter_tv"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <TextView
+        android:id="@+id/flower_list_count_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="532개 상품"
+        android:textSize="10sp"
+        android:textColor="#A1A1A1"
+        android:fontFamily="@font/notosanscjkkr_regular"
+        app:layout_constraintTop_toBottomOf="@id/flower_list_total_tv"
+        app:layout_constraintStart_toStartOf="parent"/>
+
     <androidx.viewpager2.widget.ViewPager2
         android:id="@+id/flower_list_category_vp"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_marginTop="10dp"
         android:backgroundTint="#00FFFFFF"
-        app:layout_constraintTop_toBottomOf="@id/flower_list_category_tb"
+        app:layout_constraintTop_toBottomOf="@id/flower_list_count_tv"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"/>
