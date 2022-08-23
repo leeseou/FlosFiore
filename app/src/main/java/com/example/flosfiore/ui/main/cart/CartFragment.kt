@@ -8,6 +8,9 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.flosfiore.GoodsNormalRVAdapter
+import com.example.flosfiore.GoodsOvernightRVAdapter
+import com.example.flosfiore.R
 import com.example.flosfiore.data.entities.GoodsNormal
 import com.example.flosfiore.data.entities.GoodsOvernight
 import com.example.flosfiore.databinding.FragmentCartBinding
