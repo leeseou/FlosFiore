@@ -82,6 +82,23 @@ class CartFragment : Fragment() {
     }
 
     private fun updateViews() {
+        if(goodsNormalAdapter.itemCount == 0 && goodsOvernightAdapter.itemCount == 0) {
+            // 장바구니 비었을 때
+            binding.cartContentNsv.visibility = View.GONE
+            binding.cartEmptyLlayout.visibility = View.VISIBLE
+            return
+        }
+
+        if (goodsOvernightAdapter.itemCount == 0) {
+            binding.cartOvernightDeliveryClayout.visibility = View.GONE
+        } else if (goodsNormalAdapter.itemCount == 0) {
+            binding.cartNormalDeliveryClayout.visibility = View.GONE
+        } else {
+            binding.cartOvernightDeliveryClayout.visibility = View.VISIBLE
+            binding.cartNormalDeliveryClayout.visibility = View.VISIBLE
+        }
+
+        binding.cartContentNsv.visibility = View.VISIBLE
         binding.cartPaymentGoodsCountTv.text = "총 ${goodsOvernightAdapter.countGoods() + goodsNormalAdapter.countGoods()}개"
         binding.cartTotalCountTv.text = "총 ${goodsOvernightAdapter.countGoods() + goodsNormalAdapter.countGoods()}개   |"
         binding.cartPaymentGoodsPriceTv.text = "${goodsOvernightAdapter.sumPrice() + goodsNormalAdapter.sumPrice()}원"
