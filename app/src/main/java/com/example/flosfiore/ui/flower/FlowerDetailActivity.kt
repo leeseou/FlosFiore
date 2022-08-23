@@ -51,6 +51,7 @@ class FlowerDetailActivity:AppCompatActivity() {
         val dec = DecimalFormat("#,###")
         binding.flowerDetailStoreTv.text = flower.store
         binding.flowerDetailNameTv.text = flower.name
+        binding.flowerDetailSubNameTv.text = flower.name
         binding.flowerDetailPriceTv.text = dec.format(flower.price)
     }
 

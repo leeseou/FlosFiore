@@ -8,7 +8,7 @@ import com.example.flosfiore.data.entities.Flower
 import com.example.flosfiore.databinding.ItemFlowerListBinding
 import java.text.DecimalFormat
 
-class FlowerListRVAdapter (private val flowerList: ArrayList<Flower>) : RecyclerView.Adapter<FlowerListRVAdapter.ViewHolder>() {
+class FlowerListRVAdapter (private val flowerList: ArrayList<Flower>, private var listCount: Int) : RecyclerView.Adapter<FlowerListRVAdapter.ViewHolder>() {
 
     interface MyItemClickListener{
         fun onItemClick(flower: Flower)
@@ -41,7 +41,13 @@ class FlowerListRVAdapter (private val flowerList: ArrayList<Flower>) : Recycler
 
     }
 
-    override fun getItemCount(): Int = flowerList.size
+    override fun getItemCount(): Int {
+        if(listCount > 0) {
+            return listCount
+        } else {
+            return flowerList.size
+        }
+    }
 
     inner class ViewHolder(val binding : ItemFlowerListBinding) : RecyclerView.ViewHolder(binding.root) {
         private val dec = DecimalFormat("#,###")
