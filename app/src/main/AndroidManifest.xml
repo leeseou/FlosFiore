@@ -28,6 +28,7 @@
         <activity android:name=".ui.flower.FlowerDetailActivity"/>
         <activity android:name=".ui.flower.FlowerListActivity"/>
         <activity android:name=".ui.search.SearchActivity"/>
+        <activity android:name=".PriceActivity"/>
     </application>
 
 </manifest>

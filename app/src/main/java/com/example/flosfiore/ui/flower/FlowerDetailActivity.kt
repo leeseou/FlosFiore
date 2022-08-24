@@ -9,6 +9,7 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.RecyclerView
+import com.example.flosfiore.PriceActivity
 import com.example.flosfiore.R
 import com.example.flosfiore.data.entities.Flower
 import com.example.flosfiore.databinding.ActivityFlowerDetailBinding
@@ -43,6 +44,10 @@ class FlowerDetailActivity:AppCompatActivity() {
             var intent = Intent(this, MainActivity::class.java)
             intent.putExtra("cart", flower)
             startActivity(intent)
+        }
+
+        binding.flowerDetailMoreBtn.setOnClickListener {
+            startActivity(Intent(this, PriceActivity::class.java))
         }
     }
 

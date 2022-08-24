@@ -14,6 +14,7 @@ import com.example.flosfiore.data.entities.GoodsOvernight
 import com.example.flosfiore.databinding.FragmentCartBinding
 import com.example.flosfiore.ui.main.MainActivity
 import com.example.flosfiore.ui.main.home.HomeFragment
+import java.text.DecimalFormat
 
 // 장바구니 프레그먼트
 class CartFragment : Fragment() {
@@ -112,12 +113,13 @@ class CartFragment : Fragment() {
             binding.cartNormalDeliveryClayout.visibility = View.VISIBLE
         }
 
+        val dec = DecimalFormat("#,###")
         binding.cartContentNsv.visibility = View.VISIBLE
-        binding.cartPaymentGoodsCountTv.text = "총 ${goodsOvernightAdapter.countGoods() + goodsNormalAdapter.countGoods()}개"
-        binding.cartTotalCountTv.text = "총 ${goodsOvernightAdapter.countGoods() + goodsNormalAdapter.countGoods()}개   |"
-        binding.cartPaymentGoodsPriceTv.text = "${goodsOvernightAdapter.sumPrice() + goodsNormalAdapter.sumPrice()}원"
-        binding.cartPaymentPriceTv.text = "${goodsOvernightAdapter.sumPrice() + goodsNormalAdapter.sumPrice()}원"
-        binding.cartTotalPriceTv.text = "${goodsOvernightAdapter.sumPrice() + goodsNormalAdapter.sumPrice()}원 결제하기"
+        binding.cartPaymentGoodsCountTv.text = "총 ${dec.format(goodsOvernightAdapter.countGoods() + goodsNormalAdapter.countGoods())}개"
+        binding.cartTotalCountTv.text = "총 ${dec.format(goodsOvernightAdapter.countGoods() + goodsNormalAdapter.countGoods())}개   |"
+        binding.cartPaymentGoodsPriceTv.text = "${dec.format(goodsOvernightAdapter.sumPrice() + goodsNormalAdapter.sumPrice())}원"
+        binding.cartPaymentPriceTv.text = "${dec.format(goodsOvernightAdapter.sumPrice() + goodsNormalAdapter.sumPrice())}원"
+        binding.cartTotalPriceTv.text = "${dec.format(goodsOvernightAdapter.sumPrice() + goodsNormalAdapter.sumPrice())}원 결제하기"
     }
 
     private fun setRVAdapter() {
