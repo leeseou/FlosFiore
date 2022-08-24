@@ -27,11 +27,11 @@
 
             <com.google.android.material.tabs.TabLayout
                 android:id="@+id/flower_detail_main_tb"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:background="@android:color/transparent"
                 app:tabBackground="@drawable/vp_indicator_selector"
-                app:tabPaddingEnd="4dp"
-                app:tabPaddingStart="4dp"
                 app:tabGravity="center"
                 app:tabIndicator="@null"
                 android:scrollIndicators="none"

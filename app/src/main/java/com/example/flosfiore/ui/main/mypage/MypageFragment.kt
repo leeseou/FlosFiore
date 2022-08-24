@@ -1,5 +1,6 @@
 package com.example.flosfiore.ui.main.mypage
 
+import android.content.Context
 import android.os.Bundle
 import android.view.*
 import androidx.fragment.app.Fragment
@@ -23,6 +24,9 @@ class MypageFragment : Fragment() {
         (activity as MainActivity).supportActionBar?.setDisplayShowTitleEnabled(false)
         (activity as MainActivity).supportActionBar?.setDisplayHomeAsUpEnabled(true)
         (activity as MainActivity).supportActionBar?.setHomeAsUpIndicator(R.drawable.ic_toolbar_back)
+
+        binding.mypageNameTv.text = requireContext().getSharedPreferences("auth", Context.MODE_PRIVATE).getString("name", "")
+        binding.mypageEmailTv.text = requireContext().getSharedPreferences("auth", Context.MODE_PRIVATE).getString("email", "")
 
         return binding.root
     }

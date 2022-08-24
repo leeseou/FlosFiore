@@ -1,5 +1,6 @@
 package com.example.flosfiore.ui.main.home
 
+import android.content.Context.MODE_PRIVATE
 import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -57,6 +58,8 @@ class HomeFragment : Fragment() {
                 tab, position ->
             tab.text = category[position]
         }.attach()
+
+        binding.homeMybestUserTv.text = requireContext().getSharedPreferences("auth", MODE_PRIVATE).getString("name", "")
 
         setRVAdapters()
         setRVClickListeners()
